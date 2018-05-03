@@ -1,0 +1,97 @@
+@charset "UTF-8";
+html, body {
+  background-color: #F0F0F0;
+}
+
+.margin_num {
+  height: 9px;
+}
+
+.weui-cells {
+  margin: 0;
+}
+
+.top_fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 66;
+}
+
+.top_box {
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(-179deg, #2E2E30 0%, #59595D 100%);
+  height: 44px;
+  line-height: 44px;
+  font-size: 18px;
+}
+.top_box a {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  background: url("../images/back.png") no-repeat center;
+  background-size: contain;
+}
+
+.container {
+  padding-top: 44px;
+}
+
+/* 课程详情 */
+.course_detail .binner {
+  width: 100%;
+  height: 188px;
+  overflow: hidden;
+}
+.course_detail .binner img {
+  width: 100%;
+}
+.course_detail .info {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #303030;
+  letter-spacing: 0.45px;
+  background-color: #fff;
+}
+.course_detail .info .weui-cells:before, .course_detail .info .weui-cells:after {
+  border: 0;
+}
+.course_detail .info .weui-flex__item {
+  padding: 13px 15px 0;
+}
+.course_detail .info .weui-cell {
+  padding: 15px;
+  line-height: 25px;
+}
+.course_detail .info .weui-cell img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+.course_detail .info .weui-cell .name {
+  font-size: 13px;
+  color: #303030;
+}
+.course_detail .info .weui-cell .weui-cell__ft {
+  font-size: 12px;
+  color: #999999;
+  letter-spacing: 0.38px;
+}
+.course_detail .info .weui-cell .weui-cell__ft .periods {
+  padding-right: 10px;
+  border-right: 1px solid #999999;
+}
+.course_detail .info .weui-cell .weui-cell__ft .human_qi {
+  padding-left: 8px;
+}
+.course_detail .course_introduce {
+  padding: 15px;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=qs_weike.css.map */
