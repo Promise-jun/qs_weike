@@ -32,13 +32,14 @@ $padding_top: 44px;
 
 html, body {
 	background-color: $bg_color;
+	font-family: PingFangSC-Medium;
 }
 
 .margin_num {
 	height: 9px;
 }
 
-.weui-cells {
+.weui-cells, .weui-panel {
 	margin: 0;
 }
 
@@ -124,5 +125,104 @@ html, body {
 	& .course_introduce {
 		padding: 15px;
 		background-color: #fff;
+	}
+	& .column_link {
+		font-family: PingFangSC-Medium;
+		& img {
+			width: 2px;
+			height: 15px;
+			margin-right: 7px;
+		}
+		& .column_name {
+			font-size: 14px;
+			color: #696969;
+		}
+	}
+	& .lecturer_list {
+		& .weui-panel__hd {
+			padding: 12px 15px 12px 24px;
+			font-size: 14px;
+			color: #696969;
+			background: url('../images/detail-classify.png') no-repeat 15px center;
+			background-size: 2px 15px;
+		}
+		& .weui-media-box_appmsg {
+			-webkit-align-items: flex-start;
+			align-items: flex-start;
+		}
+		& .weui-media-box__hd {
+			width: 45px;
+			height: 45px;
+			margin-right: 9px;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		& .weui-media-box__title {
+			padding-bottom: 4px;
+			font-size: 15px;
+			color: #303030;
+			& .label {
+				padding-left: 5px;
+				font-size: 12px;
+				color: $theme_color;
+			}
+		}
+		& .weui-media-box__desc {
+			font-size: 12px;
+			color: $label_color;
+			line-height: 18px;
+		}
+	}
+	& .lecturer_info {
+		& .weui-cell {
+			padding: 15px;
+			line-height: 25px;
+			& img {
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				margin-right: 7px;
+			}
+			& .name {
+				font-size: 13px;
+				color: #303030;
+			}
+			& a.follow_btn {
+				display: block;
+				line-height: 23px;
+				font-size: 12px;
+				color: $theme_color;
+				letter-spacing: 0.36px;
+				border: 1px solid $theme_color;
+				border-radius: 4px;
+				padding: 0 12px;
+			}
+			& a.is_follow {
+				color: $label_color;
+				border-color: $label_color;
+			}
+		}
+	}
+	& .lecturer_data {
+		padding: 10px 15px;
+		text-align: center;
+		background-color: #fff;
+		font-family: PingFangSC-Regular;
+		position: relative;
+		& .label {
+			font-size: 12px;
+			color: $label_color;
+		}
+		& .data {
+			font-size: 17px;
+			color: #666666;
+			letter-spacing: 0.66px;
+			overflow: hidden;
+		}
+		& img {
+			display: block;
+			margin: 5px auto;
+			width: 22px;
+		}
 	}
 }

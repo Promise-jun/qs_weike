@@ -20,6 +20,7 @@
 	</div>
 	<div class="container course_detail">
 		<div class="binner"><img src="images/bg.jpg"></div>
+
 		<div class="info">
 			<div class="weui-flex__item">心理咨询师基本功修炼之精神障碍常见症状的识别</div>
 			<div class="weui-cells">
@@ -35,15 +36,95 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="margin_num"></div>
+
 		<div class="course_introduce"></div>
+
 		<div class="margin_num"></div>
+
+		<div class="weui-cells column_link">
+			<a class="weui-cell weui-cell_access" href="javascript:;">
+				<div class="weui-cell__hd"><img src="images/detail-classify.png"></div>
+			    <div class="weui-cell__bd">
+			      	<p class="column_name">所属专栏：<span>兰心亲子教育基地</span></p>
+			    </div>
+			    <div class="weui-cell__ft"></div>
+			</a>
+		</div>
+
+		<div class="margin_num"></div>
+
+		<div class="weui-panel weui-panel_access lecturer_list">
+		  	<div class="weui-panel__hd">讲师介绍</div>
+			<div class="weui-panel__bd">
+			    <div class="weui-media-box weui-media-box_appmsg">
+				    <div class="weui-media-box__hd">
+				        <img class="weui-media-box__thumb" src="images/timg-head.jpg">
+				    </div>
+				    <div class="weui-media-box__bd">
+				        <h4 class="weui-media-box__title">陈蕾</h4>
+				        <p class="weui-media-box__desc">专注青春期家庭教育。目前开设了两个系列课程频道，国内首个专注男生家庭教育的系统课程</p>
+				    </div>
+			    </div>
+			    <div class="weui-media-box weui-media-box_appmsg">
+				    <div class="weui-media-box__hd">
+				        <img class="weui-media-box__thumb" src="images/timg-head.jpg">
+				    </div>
+				    <div class="weui-media-box__bd">
+				        <h4 class="weui-media-box__title">杨新教授<span class="label">嘉宾</span></h4>
+				        <p class="weui-media-box__desc">专注青春期家庭教育。目前开设了两个系列课程频道，国内首个专注男生家庭教育的系统课程</p>
+				    </div>
+			    </div>
+			</div>
+		</div>
+
+		<div class="margin_num"></div>
+
+		<div class="weui-cells lecturer_info">
+			<div class="weui-cell">
+			    <div class="weui-cell__hd"><img src="images/timg-head.jpg"></div>
+			    <div class="weui-cell__bd">
+			      	<p class="name">宋英</p>
+			    </div>
+			    <div class="weui-cell__ft">
+			    	<a href="javascript:;" class="follow_btn" onclick="functionList.followFn(this)">+关注</a>
+			    </div>
+			</div>
+		</div>
+		<div class="weui-flex lecturer_data">
+		  	<div class="weui-flex__item">
+		  		<p class="data">157</p>
+		  		<p class="label">课程数</p>
+		  	</div>
+		  	<div class="weui-flex__item">
+		  		<p class="data">15798</p>
+		  		<p class="label">关注人数</p>
+		  	</div>
+		  	<div class="weui-flex__item">
+		  		<p class="data"><img src="images/course-teacher.png"></p>
+		  		<p class="label">官方讲师认证</p>
+		  	</div>
+		</div>
 	</div>
 	<!-- body 最后 -->
 	<script type="text/javascript" src="./js/jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="./js/jquery-weui.min.js"></script>
 	<script type="text/javascript">
-
+		var functionList = {
+			followFn: function(obj) {
+				var isFollow = $(obj).hasClass('is_follow');
+				if (isFollow) {
+					$(obj).removeClass('is_follow');
+					$(obj).text('+关注');
+					$.toast("取消成功");
+				} else {
+					$(obj).addClass('is_follow');
+					$(obj).text('取消关注');
+					$.toast("关注成功");
+				}
+			}
+		}
 	</script>
 </body>
 </html>
