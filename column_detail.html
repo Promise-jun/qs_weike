@@ -2,104 +2,39 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>情说微课-课程详情</title>
+	<title>情说微课-专栏详情</title>
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
 	<!-- head 中 -->
 	<link rel="stylesheet" type="text/css" href="./css/weui.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/qs_weike.css">
-	<script type="text/javascript">
-	    (function (doc, win) {
-	      	var docEl = doc.documentElement,
-	     	resizeEvt = 'orientationchange' in window
-	        	? 'orientationchange'
-	        	: 'resize',
-	      	recalc = function () {
-	        	var clientWidth = docEl.clientWidth
-	        	if (!clientWidth) return
-	       		docEl.style.fontSize = clientWidth / 18.75 + 'px'
-	      	}
-      		if (!doc.addEventListener) return
-      		win.addEventListener(resizeEvt, recalc, false)
-      		doc.addEventListener('DOMContentLoaded', recalc, false)
-	    })(document, window)
-	 </script>
 </head>
 <body>
 	<div class="top_fixed">
 		<div class="weui-flex top_box">
 		  	<div class="weui-flex__item">
-		  		课程详情
+		  		专栏详情
 		  		<a href="javascript:;"></a>
 		  	</div>
 		</div>
 	</div>
-	<div class="container course_detail">
+	<div class="container column_detail">
 		<div class="binner"><img src="images/bg.jpg"></div>
 
 		<div class="info">
 			<div class="weui-flex__item">心理咨询师基本功修炼之精神障碍常见症状的识别</div>
 			<div class="weui-cells">
 				<div class="weui-cell">
-				    <div class="weui-cell__hd"><img src="images/timg-head.jpg"></div>
 				    <div class="weui-cell__bd">
-				      	<p class="name">宋英</p>
+				      	<p class="name">
+				      		<span class="periods">已更新4期</span>
+				    		<span class="human_qi">5296人气</span>
+				      	</p>
 				    </div>
 				    <div class="weui-cell__ft">
-				    	<span class="periods">已更新4期</span>
-				    	<span class="human_qi">5296人气</span>
+				    	<span class="price">¥ 89.0</span>
 				    </div>
 				</div>
-			</div>
-		</div>
-
-		<div class="margin_num"></div>
-
-		<div class="course_introduce">
-			<p class="title"><span>课程介绍</span></p>
-			<div class="main_content">
-				<p>课程介绍大家都把高质量的陪伴挂在嘴边，但是：</p>
-				<p>1.什么样的陪伴才是高质量的陪伴？高质量陪伴=每次都快速回应吗？</p>
-				<p>1.什么样的陪伴才是高质量的陪伴？高质量陪伴=每次都快速回应吗？</p>
-				<p>1.什么样的陪伴才是高质量的陪伴？高质量陪伴=每次都快速回应吗？</p>
-			</div>
-		</div>
-
-		<div class="margin_num"></div>
-
-		<div class="weui-cells column_link">
-			<a class="weui-cell weui-cell_access" href="javascript:;">
-				<div class="weui-cell__hd"><img src="images/detail-classify.png"></div>
-			    <div class="weui-cell__bd">
-			      	<p class="column_name">所属专栏：<span>兰心亲子教育基地</span></p>
-			    </div>
-			    <div class="weui-cell__ft"></div>
-			</a>
-		</div>
-
-		<div class="margin_num"></div>
-
-		<div class="weui-panel weui-panel_access lecturer_list">
-		  	<div class="weui-panel__hd">讲师介绍</div>
-			<div class="weui-panel__bd">
-			    <div class="weui-media-box weui-media-box_appmsg">
-				    <div class="weui-media-box__hd">
-				        <img class="weui-media-box__thumb" src="images/timg-head.jpg">
-				    </div>
-				    <div class="weui-media-box__bd">
-				        <h4 class="weui-media-box__title">陈蕾</h4>
-				        <p class="weui-media-box__desc">专注青春期家庭教育。目前开设了两个系列课程频道，国内首个专注男生家庭教育的系统课程</p>
-				    </div>
-			    </div>
-			    <div class="weui-media-box weui-media-box_appmsg">
-				    <div class="weui-media-box__hd">
-				        <img class="weui-media-box__thumb" src="images/timg-head.jpg">
-				    </div>
-				    <div class="weui-media-box__bd">
-				        <h4 class="weui-media-box__title">杨新教授<span class="label">嘉宾</span></h4>
-				        <p class="weui-media-box__desc">专注青春期家庭教育。目前开设了两个系列课程频道，国内首个专注男生家庭教育的系统课程</p>
-				    </div>
-			    </div>
 			</div>
 		</div>
 
@@ -134,29 +69,59 @@
 		</div>
 
 		<div class="margin_num"></div>
+	
+		<!-- 专栏内容 -->
+		<div class="column_cont">
+			<p class="title"><span>专栏内容</span></p>
+			<div class="weui-cells column_list">
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+				    <div class="weui-cell__bd">
+				      	<p class="title">神经障碍常见症状-多动症</p>
+				      	<p class="human_qi">人气：2930</p>
+				    </div>
+				    <div class="weui-cell__ft">
+						<span class="time">5天前</span>
+				    </div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+				    <div class="weui-cell__bd">
+				      	<p class="title">神经障碍常见症状-自闭症</p>
+				      	<p class="human_qi">人气：2930</p>
+				    </div>
+				    <div class="weui-cell__ft">
+						<span class="time">9天前</span>
+				    </div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+				    <div class="weui-cell__bd">
+				      	<p class="title">神经障碍常见症状-狂躁极端行为</p>
+				      	<p class="human_qi">人气：2930</p>
+				    </div>
+				    <div class="weui-cell__ft">
+						<span class="time">4月31日</span>
+				    </div>
+				</a>
+			</div>
+		</div>
 
-		<div class="weui-cells lecture_instruction">
-			<a class="weui-cell weui-cell_access" href="javascript:functionList.slideFn($('.instruction_detail'), $('.lecture_instruction .weui-cell__ft'));">
-				<div class="weui-cell__hd"><img src="images/detail-classify.png"></div>
-			    <div class="weui-cell__bd">
-			      	<p class="column_name">听课须知</p>
-			    </div>
-			    <div class="weui-cell__ft"></div>
-			</a>
-			<div class="weui-flex__item instruction_detail">
-		  		<p>1.本次课堂是免费公开课</p>
-				<p>2.上课形式为语音+图文消息互动直播</p>
-				<p>3.关注直播间，可以接收下次开课通知</p>
-				<p>4.本次课程内容永久保存，可反复收听</p>
-				<p>5.对课程有疑问可点击上方“课程咨询”留言</p>
-		  	</div>
+		<div class="margin_num"></div>
+		
+		<!-- 课程介绍 -->
+		<div class="course_introduce">
+			<p class="title"><span>课程介绍</span></p>
+			<div class="main_content">
+				<p>课程介绍大家都把高质量的陪伴挂在嘴边，但是：</p>
+				<p>1.什么样的陪伴才是高质量的陪伴？高质量陪伴=每次都快速回应吗？</p>
+				<p>1.什么样的陪伴才是高质量的陪伴？高质量陪伴=每次都快速回应吗？</p>
+				<p>1.什么样的陪伴才是高质量的陪伴？高质量陪伴=每次都快速回应吗？</p>
+			</div>
 		</div>
 
 		<div class="margin_num" style="height: 59px;"></div>
 
 	</div>
 	<div class="foot_fixed">
-		<a href="javascript:functionList.footBtnFn($('#payment'));">¥89.9购买</a>
+		<a href="javascript:functionList.footBtnFn($('#payment'));">¥89.9购买专栏</a>
 	</div>
 
 	<!-- popup 支付弹窗 -->
@@ -209,7 +174,9 @@
 	<script type="text/javascript" src="./js/jquery-weui.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			
+			$('.binner').css({
+				height: $(window).innerWidth() / 2
+			})
 		})
 
 		var functionList = {
@@ -225,27 +192,10 @@
 					$.toast("关注成功");
 				}
 			},
-			// 滑动切换显示隐藏
-			slideFn: function($obj, $div) {
-				$obj.slideToggle(200);
-				$div.fadeToggle(200);
-			},
 			// 点击底部按钮
 			footBtnFn: function($obj) {
 				// 打开支付弹窗
 				$obj.popup();
-				//alert
-				$.prompt({
-					title: '输入密码',
-					input: '',
-					empty: false, // 是否允许为空
-					onOK: function (input) {
-					    //点击确认
-					},
-					onCancel: function () {
-					    //点击取消
-				  	}
-				});
 			},
 			// 点击确认支付
 			paymentFn: function($obj) {

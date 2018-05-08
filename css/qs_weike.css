@@ -4,12 +4,31 @@ html, body {
   font-family: PingFangSC-Medium;
 }
 
+/* 改变自带的样式 */
 .margin_num {
   height: 9px;
+  background-color: #F0F0F0;
 }
 
 .weui-cells, .weui-panel {
   margin: 0;
+}
+
+.weui-popup__container, .weui-popup__overlay {
+  z-index: 100;
+}
+
+.weui-cells_radio .weui-check:checked + .weui-icon-checked:before {
+  color: #FD7A60;
+}
+
+.weui-switch-cp__input:checked ~ .weui-switch-cp__box, .weui-switch:checked {
+  border-color: #FD7A60;
+  background-color: #FD7A60;
+}
+
+.weui-dialog__btn {
+  color: #FD7A60;
 }
 
 .top_fixed {
@@ -38,14 +57,68 @@ html, body {
   background-size: contain;
 }
 
+/* 头部tab切换 */
+.top_tab {
+  height: 44px;
+  position: relative;
+  background-color: #fff;
+  line-height: 44px;
+  text-align: center;
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #696969;
+}
+.top_tab .active_tab {
+  color: #FF5A1C;
+}
+.top_tab .line_box {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.top_tab .line_box .line {
+  width: 9.3%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #FF5A1C;
+  position: absolute;
+  left: 12%;
+}
+
+.foot_fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 66;
+  font-family: PingFangSC-Regular;
+}
+.foot_fixed a {
+  display: block;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  background-color: #FD7A60;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
 .container {
   padding-top: 44px;
+}
+
+/* 开关 */
+.switch {
+  display: block;
 }
 
 /* 课程详情 */
 .course_detail .binner {
   width: 100%;
-  height: 188px;
+  height: 9.375rem;
   overflow: hidden;
 }
 .course_detail .binner img {
@@ -91,8 +164,30 @@ html, body {
   padding-left: 8px;
 }
 .course_detail .course_introduce {
-  padding: 15px;
+  padding: 0 15px;
   background-color: #fff;
+}
+.course_detail .course_introduce .title {
+  height: 26px;
+  line-height: 26px;
+  font-family: PingFangSC-Medium;
+  font-size: 12px;
+  color: #FD7A60;
+  letter-spacing: 0;
+}
+.course_detail .course_introduce .title span {
+  padding: 5px 10px;
+  background-color: #FFDBD1;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.course_detail .course_introduce .main_content {
+  padding: 10px 0;
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #696969;
+  letter-spacing: 0.46px;
+  line-height: 22px;
 }
 .course_detail .column_link {
   font-family: PingFangSC-Medium;
@@ -188,6 +283,336 @@ html, body {
   display: block;
   margin: 5px auto;
   width: 22px;
+}
+.course_detail .lecturer_data .line {
+  width: 1px;
+  height: 18px;
+  background-color: #BDBDBD;
+  position: absolute;
+  left: 34%;
+  top: 50%;
+  margin-top: -9px;
+}
+.course_detail .lecturer_data .two_line {
+  left: 65%;
+}
+.course_detail .lecture_instruction {
+  font-family: PingFangSC-Medium;
+}
+.course_detail .lecture_instruction img {
+  width: 2px;
+  height: 15px;
+  margin-right: 7px;
+}
+.course_detail .lecture_instruction .column_name {
+  font-size: 14px;
+  color: #696969;
+}
+.course_detail .lecture_instruction .instruction_detail {
+  padding: 5px 15px 10px;
+  font-size: 14px;
+  color: #999999;
+  line-height: 20px;
+}
+.course_detail .lecture_instruction .weui-cell__ft {
+  display: none;
+}
+.course_detail .lecture_instruction .weui-cell__ft:after {
+  border-width: 0 2px 2px 0;
+}
+
+#payment p.wx {
+  padding-left: 37px;
+  background: url("../images/icon_wechat.png") no-repeat left center;
+  background-size: 27px auto;
+}
+#payment p.zfb {
+  padding-left: 37px;
+  background: url("../images/icon_alipay.png") no-repeat left center;
+  background-size: 27px auto;
+}
+#payment p.balance {
+  padding-left: 37px;
+  background: url("../images/icon_-balance.png") no-repeat left center;
+  background-size: 27px auto;
+}
+#payment .payment_link .weui-cell {
+  padding: 0 0 0 15px;
+  height: 50px;
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #666666;
+  letter-spacing: 0.5px;
+}
+#payment .payment_link .total {
+  margin-left: 3px;
+  font-size: 18px;
+  color: #FD7A60;
+  letter-spacing: 0.7px;
+}
+#payment .payment_link a {
+  display: block;
+  padding: 0 32px;
+  height: 50px;
+  line-height: 50px;
+  background: #FD7A60;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0.7px;
+}
+
+/* 专栏详情 */
+.column_detail .binner {
+  width: 100%;
+  height: 188px;
+  overflow: hidden;
+}
+.column_detail .binner img {
+  width: 100%;
+}
+.column_detail .info {
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #303030;
+  letter-spacing: 0.45px;
+  background-color: #fff;
+}
+.column_detail .info .weui-cells:before, .column_detail .info .weui-cells:after {
+  border: 0;
+}
+.column_detail .info .weui-flex__item {
+  padding: 13px 15px 0;
+}
+.column_detail .info .weui-cell {
+  padding: 15px;
+  line-height: 25px;
+}
+.column_detail .info .weui-cell .name {
+  font-size: 12px;
+  color: #999999;
+  letter-spacing: 0.38px;
+}
+.column_detail .info .weui-cell .name .periods {
+  padding-right: 10px;
+  border-right: 1px solid #999999;
+}
+.column_detail .info .weui-cell .name .human_qi {
+  padding-left: 7px;
+}
+.column_detail .info .weui-cell .price {
+  font-size: 18px;
+  color: #FD7A60;
+}
+.column_detail .lecturer_info .weui-cell {
+  padding: 15px;
+  line-height: 25px;
+}
+.column_detail .lecturer_info .weui-cell img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+.column_detail .lecturer_info .weui-cell .name {
+  font-size: 13px;
+  color: #303030;
+}
+.column_detail .lecturer_info .weui-cell a.follow_btn {
+  display: block;
+  line-height: 23px;
+  font-size: 12px;
+  color: #FD7A60;
+  letter-spacing: 0.36px;
+  border: 1px solid #FD7A60;
+  border-radius: 4px;
+  padding: 0 12px;
+}
+.column_detail .lecturer_info .weui-cell a.is_follow {
+  color: #999999;
+  border-color: #999999;
+}
+.column_detail .lecturer_data {
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #fff;
+  font-family: PingFangSC-Regular;
+  position: relative;
+}
+.column_detail .lecturer_data .label {
+  font-size: 12px;
+  color: #999999;
+}
+.column_detail .lecturer_data .data {
+  font-size: 17px;
+  color: #666666;
+  letter-spacing: 0.66px;
+  overflow: hidden;
+}
+.column_detail .lecturer_data img {
+  display: block;
+  margin: 5px auto;
+  width: 22px;
+}
+.column_detail .lecturer_data .line {
+  width: 1px;
+  height: 18px;
+  background-color: #BDBDBD;
+  position: absolute;
+  left: 34%;
+  top: 50%;
+  margin-top: -9px;
+}
+.column_detail .lecturer_data .two_line {
+  left: 65%;
+}
+.column_detail .course_introduce {
+  padding: 0 15px;
+  background-color: #fff;
+}
+.column_detail .course_introduce .title {
+  height: 26px;
+  line-height: 26px;
+  font-family: PingFangSC-Medium;
+  font-size: 12px;
+  color: #FD7A60;
+  letter-spacing: 0;
+}
+.column_detail .course_introduce .title span {
+  padding: 5px 10px;
+  background-color: #FFDBD1;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.column_detail .course_introduce .main_content {
+  padding: 10px 0;
+  font-family: PingFangSC-Medium;
+  font-size: 14px;
+  color: #696969;
+  letter-spacing: 0.46px;
+  line-height: 22px;
+}
+.column_detail .column_cont {
+  background-color: #fff;
+}
+.column_detail .column_cont > .title {
+  padding: 0 15px;
+  height: 26px;
+  line-height: 26px;
+  font-family: PingFangSC-Medium;
+  font-size: 12px;
+  color: #FD7A60;
+  letter-spacing: 0;
+}
+.column_detail .column_cont > .title span {
+  padding: 5px 10px;
+  background-color: #FFDBD1;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.column_detail .column_cont .weui-cells:before {
+  border: 0;
+}
+.column_detail .column_cont .column_list a {
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  font-family: PingFangSC-Medium;
+}
+.column_detail .column_cont .column_list a .title {
+  font-size: 14px;
+  color: #303030;
+  line-height: 25px;
+}
+.column_detail .column_cont .column_list a .human_qi {
+  font-size: 12px;
+  color: #696969;
+}
+.column_detail .column_cont .column_list a .time {
+  font-size: 12px;
+  color: #696969;
+}
+.column_detail .column_cont .column_list a .weui-cell__ft {
+  padding-right: 0;
+}
+.column_detail .column_cont .column_list a .weui-cell__ft:after {
+  border-style: none;
+}
+
+/* 情说成长 */
+.qs_adolesce .page_content {
+  display: none;
+  padding: 15px 0.5rem 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+.qs_adolesce .page_content .adolesce_list:nth-child(odd) {
+  margin-right: 0.5rem;
+}
+.qs_adolesce .adolesce_list {
+  float: left;
+  width: 8.625rem;
+  padding-bottom: 15px;
+}
+.qs_adolesce .adolesce_list .adolesce_binner {
+  width: 100%;
+  height: 4.525rem;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  position: relative;
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+.qs_adolesce .adolesce_list .play_icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+  background: url("../images/icon_play_voice@2x.png") no-repeat center;
+  background-size: contain;
+}
+.qs_adolesce .adolesce_list .title {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-size: 12px;
+  color: #696969;
+}
+.qs_adolesce .adolesce_list .data {
+  padding: 8px 0;
+  font-size: 0px;
+  color: #878686;
+}
+.qs_adolesce .adolesce_list .data span {
+  font-size: 10px;
+  padding-left: 0.75rem;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0.55rem auto;
+}
+.qs_adolesce .adolesce_list .data span:not(:first-child) {
+  margin-left: 0.75rem;
+}
+.qs_adolesce .adolesce_list .data span:first-child {
+  background-image: url("../images/icon_home_name@2x.png");
+}
+.qs_adolesce .adolesce_list .data span:nth-child(2) {
+  background-image: url("../images/icon_home_comment@2x.png");
+}
+.qs_adolesce .adolesce_list .data span:last-child {
+  background-image: url("../images/icon_home_listen@2x.png");
+}
+.qs_adolesce .adolesce_list .price {
+  font-size: 12px;
+  color: #FF5A1C;
+}
+.qs_adolesce .adolesce_list .free {
+  font-size: 12px;
+  color: #5ECBD3;
 }
 
 /*# sourceMappingURL=qs_weike.css.map */

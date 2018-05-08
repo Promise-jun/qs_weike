@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // px转rem
-@function pxrem($px, $base-font-size: 37.5px) {
+@function pxrem($px, $base-font-size: 40px) {
 	@if (unitless($px)) { 
 		@warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you"; 
 		@return pxrem($px + 0px);
@@ -24,9 +24,11 @@
 	} 
 }
 
-$bg_color: #F0F0F0;      //背景色
-$label_color: #999999;   //标签色
-$theme_color: #FD7A60;   //主题色
+$bg_color: #F0F0F0;          //背景色
+$label_color: #999999;       //标签色
+$title_color: #696969;       //标题色
+$theme_color: #FD7A60;       //主题色
+$theme_font_color: #FF5A1C;  //主题文字颜色
 $padding_top: 44px;
 
 
@@ -35,12 +37,26 @@ html, body {
 	font-family: PingFangSC-Medium;
 }
 
+/* 改变自带的样式 */
 .margin_num {
 	height: 9px;
+	background-color: $bg_color;
 }
-
 .weui-cells, .weui-panel {
 	margin: 0;
+}
+.weui-popup__container, .weui-popup__overlay {
+	z-index: 100;
+}
+.weui-cells_radio .weui-check:checked+.weui-icon-checked:before {
+	color: $theme_color;
+}
+.weui-switch-cp__input:checked~.weui-switch-cp__box, .weui-switch:checked {
+	border-color: $theme_color;
+	background-color: $theme_color;
+}
+.weui-dialog__btn {
+	color: $theme_color;
 }
 
 .top_fixed {
@@ -67,17 +83,68 @@ html, body {
 		background-size: contain;
 	}
 }
+/* 头部tab切换 */
+.top_tab {
+	height: 44px;
+	position: relative;
+	background-color: #fff;
+	line-height: 44px;
+	text-align: center;
+	font-family: PingFangSC-Regular;
+	font-size: 15px;
+	color: $title_color;
+	& .active_tab {
+		color: $theme_font_color;
+	}
+	& .line_box {
+		width: 100%;
+		height: 2px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		& .line {
+			width: 9.3%;
+			height: 100%;
+			border-radius: 5px;
+			background-color: $theme_font_color;
+			position: absolute;
+			left: 12%;
+		}
+	}
+}
+.foot_fixed {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 66;
+	font-family: PingFangSC-Regular;
+	& a {
+		display: block;
+		text-align: center;
+		height: 50px;
+		line-height: 50px;
+		background-color: $theme_color;
+		font-size: 18px;
+		color: #FFFFFF;
+		letter-spacing: 1px;
+	}
+}
 
 .container {
 	padding-top: $padding_top;
 }
 
+/* 开关 */
+.switch {
+	display: block;
+}
 
 /* 课程详情 */
 .course_detail {
 	& .binner {
 		width: 100%;
-		height: 188px;
+		height: pxrem(375);
 		overflow: hidden;
 		& img {
 			width: 100%;
@@ -110,11 +177,11 @@ html, body {
 			}
 			& .weui-cell__ft {
 				font-size: 12px;
-				color: #999999;
+				color: $label_color;
 				letter-spacing: 0.38px;
 				& .periods {
 					padding-right: 10px;
-					border-right: 1px solid #999999;
+					border-right: 1px solid $label_color;
 				}
 				& .human_qi {
 					padding-left: 8px;
@@ -123,8 +190,30 @@ html, body {
 		}
 	}
 	& .course_introduce {
-		padding: 15px;
+		padding: 0 15px;
 		background-color: #fff;
+		& .title {
+			height: 26px;
+			line-height: 26px;
+			font-family: PingFangSC-Medium;
+			font-size: 12px;
+			color: $theme_color;
+			letter-spacing: 0;
+			& span {
+				padding: 5px 10px;
+				background-color: #FFDBD1;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+			}
+		}
+		& .main_content {
+			padding: 10px 0;
+			font-family: PingFangSC-Medium;
+			font-size: 14px;
+			color: $title_color;
+			letter-spacing: 0.46px;
+			line-height: 22px;
+		}
 	}
 	& .column_link {
 		font-family: PingFangSC-Medium;
@@ -135,14 +224,14 @@ html, body {
 		}
 		& .column_name {
 			font-size: 14px;
-			color: #696969;
+			color: $title_color;
 		}
 	}
 	& .lecturer_list {
 		& .weui-panel__hd {
 			padding: 12px 15px 12px 24px;
 			font-size: 14px;
-			color: #696969;
+			color: $title_color;
 			background: url('../images/detail-classify.png') no-repeat 15px center;
 			background-size: 2px 15px;
 		}
@@ -223,6 +312,352 @@ html, body {
 			display: block;
 			margin: 5px auto;
 			width: 22px;
+		}
+		& .line {
+			width: 1px;
+			height: 18px;
+			background-color: #BDBDBD;
+			position: absolute;
+			left: 34%;
+			top: 50%;
+			margin-top: -9px;
+		}
+		& .two_line {
+			left: 65%;
+		}
+	}
+	& .lecture_instruction {
+		font-family: PingFangSC-Medium;
+		& img {
+			width: 2px;
+			height: 15px;
+			margin-right: 7px;
+		}
+		& .column_name {
+			font-size: 14px;
+			color: $title_color;
+		}
+		& .instruction_detail {
+			padding: 5px 15px 10px;
+			font-size: 14px;
+			color: $label_color;
+			line-height: 20px;
+		}
+		& .weui-cell__ft {
+			display: none;
+		}
+		& .weui-cell__ft:after {
+			border-width: 0 2px 2px 0;
+		}
+	}
+}
+
+
+// 支付弹窗
+#payment {
+	& p.wx {
+		padding-left: 37px;
+		background: url('../images/icon_wechat.png') no-repeat left center;
+		background-size: 27px auto;
+	}
+	& p.zfb {
+		padding-left: 37px;
+		background: url('../images/icon_alipay.png') no-repeat left center;
+		background-size: 27px auto;
+	}
+	& p.balance {
+		padding-left: 37px;
+		background: url('../images/icon_-balance.png') no-repeat left center;
+		background-size: 27px auto;
+	}
+	& .payment_link {
+		& .weui-cell {
+			padding: 0 0 0 15px;
+			height: 50px;
+			font-family: PingFangSC-Medium;
+			font-size: 14px;
+			color: #666666;
+			letter-spacing: 0.5px;
+		}
+		& .total {
+			margin-left: 3px;
+			font-size: 18px;
+			color: $theme_color;
+			letter-spacing: 0.7px;
+		}
+		& a {
+			display: block;
+			padding: 0 32px;
+			height: 50px;
+			line-height: 50px;
+			background: $theme_color;
+			font-size: 18px;
+			color: #FFFFFF;
+			letter-spacing: 0.7px;
+		}
+	}
+}
+
+
+/* 专栏详情 */
+.column_detail {
+	& .binner {
+		width: 100%;
+		height: 188px;
+		overflow: hidden;
+		& img {
+			width: 100%;
+		}
+	}
+	& .info {
+		font-family: PingFangSC-Regular;
+		font-size: 16px;
+		color: #303030;
+		letter-spacing: 0.45px;
+		background-color: #fff;
+		& .weui-cells:before, & .weui-cells:after {
+			border: 0;
+		}
+		& .weui-flex__item {
+			padding: 13px 15px 0;
+		}
+		& .weui-cell {
+			padding: 15px;
+			line-height: 25px;
+			& .name {
+				font-size: 12px;
+				color: $label_color;
+				letter-spacing: 0.38px;
+				& .periods {
+					padding-right: 10px;
+					border-right: 1px solid $label_color;
+				}
+				& .human_qi {
+					padding-left: 7px;
+				}
+			}
+			& .price {
+				font-size: 18px;
+				color: $theme_color;
+			}
+		}
+	}
+	& .lecturer_info {
+		& .weui-cell {
+			padding: 15px;
+			line-height: 25px;
+			& img {
+				width: 25px;
+				height: 25px;
+				border-radius: 50%;
+				margin-right: 7px;
+			}
+			& .name {
+				font-size: 13px;
+				color: #303030;
+			}
+			& a.follow_btn {
+				display: block;
+				line-height: 23px;
+				font-size: 12px;
+				color: $theme_color;
+				letter-spacing: 0.36px;
+				border: 1px solid $theme_color;
+				border-radius: 4px;
+				padding: 0 12px;
+			}
+			& a.is_follow {
+				color: $label_color;
+				border-color: $label_color;
+			}
+		}
+	}
+	& .lecturer_data {
+		padding: 10px 15px;
+		text-align: center;
+		background-color: #fff;
+		font-family: PingFangSC-Regular;
+		position: relative;
+		& .label {
+			font-size: 12px;
+			color: $label_color;
+		}
+		& .data {
+			font-size: 17px;
+			color: #666666;
+			letter-spacing: 0.66px;
+			overflow: hidden;
+		}
+		& img {
+			display: block;
+			margin: 5px auto;
+			width: 22px;
+		}
+		& .line {
+			width: 1px;
+			height: 18px;
+			background-color: #BDBDBD;
+			position: absolute;
+			left: 34%;
+			top: 50%;
+			margin-top: -9px;
+		}
+		& .two_line {
+			left: 65%;
+		}
+	}
+	& .course_introduce {
+		padding: 0 15px;
+		background-color: #fff;
+		& .title {
+			height: 26px;
+			line-height: 26px;
+			font-family: PingFangSC-Medium;
+			font-size: 12px;
+			color: $theme_color;
+			letter-spacing: 0;
+			& span {
+				padding: 5px 10px;
+				background-color: #FFDBD1;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+			}
+		}
+		& .main_content {
+			padding: 10px 0;
+			font-family: PingFangSC-Medium;
+			font-size: 14px;
+			color: $title_color;
+			letter-spacing: 0.46px;
+			line-height: 22px;
+		}
+	}
+	& .column_cont {
+		background-color: #fff;
+		&>.title {
+			padding: 0 15px;
+			height: 26px;
+			line-height: 26px;
+			font-family: PingFangSC-Medium;
+			font-size: 12px;
+			color: $theme_color;
+			letter-spacing: 0;
+			& span {
+				padding: 5px 10px;
+				background-color: #FFDBD1;
+				border-bottom-left-radius: 8px;
+				border-bottom-right-radius: 8px;
+			}
+		}
+		& .weui-cells:before {
+			border: 0;
+		}
+		& .column_list {
+			& a {
+				-webkit-align-items: flex-start;
+				align-items: flex-start;
+				font-family: PingFangSC-Medium;
+				& .title {
+					font-size: 14px;
+					color: #303030;
+					line-height: 25px;
+				}
+				& .human_qi {
+					font-size: 12px;
+					color: $title_color;
+				}
+				& .time {
+					font-size: 12px;
+					color: $title_color;
+				}
+				& .weui-cell__ft {
+					padding-right: 0;
+				}
+				& .weui-cell__ft:after {
+					border-style: none;
+				}
+			}
+		}
+	}
+}
+
+
+/* 情说成长 */
+.qs_adolesce {
+	& .page_content {
+		display: none;
+		padding: 15px pxrem(20) 0;
+		background-color: #fff;
+		overflow: hidden;
+		& .adolesce_list:nth-child(odd) {
+			margin-right: pxrem(20);
+		}
+	}
+	& .adolesce_list {
+		float: left;
+		width: pxrem(345);
+		padding-bottom: 15px;
+		& .adolesce_binner {
+			width: 100%;
+			height: pxrem(181);
+			margin-bottom: 6px;
+			border-radius: 4px;
+			position: relative;
+			background-image: url('../images/bg.jpg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% auto;
+		}
+		& .play_icon {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			right: 8px;
+			bottom: 6px;
+			background: url('../images/icon_play_voice@2x.png') no-repeat center;
+			background-size: contain;
+		}
+		& .title {
+			width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		    display: -webkit-box;
+		    -webkit-box-orient: vertical;
+		    -webkit-line-clamp: 1;
+			font-size: 12px;
+			color: $title_color;
+		}
+		& .data {
+			padding: 8px 0;
+			font-size: 0px;
+			color: #878686;
+			& span {
+				font-size: 10px;
+				padding-left: pxrem(30);
+				background-repeat: no-repeat;
+				background-position: left center;
+				background-size: pxrem(22) auto;
+			}
+			& span:not(:first-child) {
+				margin-left: pxrem(30);
+			}
+			& span:first-child {
+				background-image: url('../images/icon_home_name@2x.png');
+			}
+			& span:nth-child(2) {
+				background-image: url('../images/icon_home_comment@2x.png');
+			}
+			& span:last-child {
+				background-image: url('../images/icon_home_listen@2x.png');
+			}
+		}
+		& .price {
+			font-size: 12px;
+			color: $theme_font_color;
+		}
+		& .free {
+			font-size: 12px;
+			color: #5ECBD3;
 		}
 	}
 }
