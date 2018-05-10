@@ -715,11 +715,11 @@
 							<div class="col-xs-12 chat_top">
 								<div class="col-xs-4 choose_user">
 									<a href="javascript:fadeToggleFn($('.user_model'));" class="chat_btn">选择</a>
-									<div class="user_card">
-										<img src="add/upload_head/timg-head.jpg">
+									<div class="user_card" id="user">
+										<img>
 										<div class="user_data">
-											<p class="name">莫伊琳</p>
-											<p class="id">（100002882）</p>
+											<p class="name"></p>
+											<p class="id"></p>
 										</div>
 									</div>
 								</div>
@@ -733,34 +733,8 @@
 							<div class="col-xs-12 chat_content">
 								<ul class="col-xs-2">
 									<p>联系人</p>
-									<li class="user_card active_user">
-										<img src="add/upload_head/timg-head.jpg">
-										<div class="user_data">
-											<p class="name">李楠</p>
-											<p class="id">（100002882）</p>
-										</div>
-									</li>
-									<li class="user_card">
-										<img src="add/upload_head/timg-head.jpg">
-										<div class="user_data">
-											<p class="name">倪庆银</p>
-											<p class="id">（100002882）</p>
-										</div>
-									</li>
-									<li class="user_card">
-										<img src="add/upload_head/timg-head.jpg">
-										<div class="user_data">
-											<p class="name">王菲年</p>
-											<p class="id">（100002882）</p>
-										</div>
-									</li>
-									<li class="user_card">
-										<img src="add/upload_head/timg-head.jpg">
-										<div class="user_data">
-											<p class="name">盼韶君</p>
-											<p class="id">（100002882）</p>
-										</div>
-									</li>
+									<!-- 联系人-->
+									<div class="linkman_box"></div>
 								</ul>
 								<div class="col-xs-10 main_content">
 									<div class="col-xs-12 search_keyword">
@@ -769,34 +743,7 @@
 										<a href="javascript:;" class="chat_btn">搜索</a>
 									</div>
 									<div class="col-xs-12 chat_list">
-										<div class="chat_card">
-											<p class="user_info">
-												<span class="name">他人</span>
-												<span class="time">2018-05-09 15:00</span>
-											</p>
-											<p class="content">发生了的解放了</p>
-										</div>
-										<div class="chat_card">
-											<p class="myself_info">
-												<span class="name">自己</span>
-												<span class="time">2018-05-09 15:00</span>
-											</p>
-											<p class="content">发生了的解放了</p>
-										</div>
-										<div class="chat_card">
-											<p class="user_info">
-												<span class="name">他人</span>
-												<span class="time">2018-05-09 15:00</span>
-											</p>
-											<p class="content">发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了发生了的解放了</p>
-										</div>
-										<div class="chat_card">
-											<p class="myself_info">
-												<span class="name">自己</span>
-												<span class="time">2018-05-09 15:00</span>
-											</p>
-											<p class="content">发生了的解放了</p>
-										</div>
+										<!-- 聊天内容 -->
 									</div>
 								</div>
 							</div>
@@ -882,38 +829,13 @@
 			<div class="model_box">
 				<div class="title">选择用户<a href="javascript:fadeToggleFn($('.user_model'));">×</a></div>
 				<div class="search">
-					用户ID：<input type="text">
-					用户手机：<input type="text">
-					用户昵称：<input type="text">
-					<a href="javascript:;" class="chat_btn">搜索</a>
+					用户ID：<input type="text" name="user_id">
+					用户手机：<input type="text" name="user_iphone">
+					用户昵称：<input type="text" name="user_name">
+					<a href="javascript:searchUser($('.choose_list'));" class="chat_btn">搜索</a>
 				</div>
 				<div style="height: 10px; background-color: #f0f0f0;"></div>
-				<div class="row choose_list">
-					<table class="table table-bordered">
-						<tr>
-							<td rowspan="2" class="center"><img src="add/upload_head/timg-head.jpg"></td>
-							<td>用户ID：<span>100002882</span></td>
-							<td>昵称：<span>目不斜视的女同学</span></td>
-							<td rowspan="2" class="center"><a href="javascript:fadeToggleFn($('.user_model'));" class="chat_btn">选择</a></td>
-						</tr>
-						<tr>
-							<td>手机号：<span>13645128888</span></td>
-							<td>注册时间：<span>2018-05-09 15:19:30</span></td>
-						</tr>
-					</table>
-					<table class="table table-bordered">
-						<tr>
-							<td rowspan="2" class="center"><img src="add/upload_head/timg-head.jpg"></td>
-							<td>用户ID：<span>100002882</span></td>
-							<td>昵称：<span>目不斜视的女同学</span></td>
-							<td rowspan="2" class="center"><a href="javascript:fadeToggleFn($('.user_model'));" class="chat_btn">选择</a></td>
-						</tr>
-						<tr>
-							<td>手机号：<span>13645128888</span></td>
-							<td>注册时间：<span>2018-05-09 15:19:30</span></td>
-						</tr>
-					</table>
-				</div>
+				<div class="row choose_list"></div>
 			</div>
 		</div>
 
@@ -968,18 +890,158 @@
 		<!-- inline scripts related to this page -->
 
 		<!-- 增加 -->
-		
 
 		<script type="text/javascript">
+			// 假数据
+			// 用户
+			var userData = [
+				{
+					userId: 100002882,
+					userName: '目不斜视的女同学',
+					iphone: 13645128888,
+					time: '2018-05-09 15:19:30',
+					headUrl: 'add/upload_head/timg-head.jpg'
+				},
+				{
+					userId: 100002992,
+					userName: '李腹地',
+					iphone: 18345645256,
+					time: '2018-05-18 15:19:30',
+					headUrl: 'add/upload_head/timg-head.jpg'
+				}
+			]
+			// 联系人
+			var linkmanData = [
+				{
+					id: '100001234',
+					name: '联系人1',
+					src: 'add/upload_head/timg-head.jpg'
+				},
+				{
+					id: '100002345',
+					name: '联系人2',
+					src: 'add/upload_head/timg-head.jpg'
+				},
+				{
+					id: '100003456',
+					name: '联系人3',
+					src: 'add/upload_head/timg-head.jpg'
+				}
+			]
+			// 聊天内容
+			var chatContData = [
+				{
+					time: '2018-05-09 15:00',
+					name: '联系人1',
+					type: 1,  //别人
+					content: '法律的快速减肥拉德斯基发牢骚'
+				},
+				{
+					time: '2018-05-09 15:10',
+					name: '目不斜视的女同学',
+					type: 0,  //自己
+					content: '好的'
+				},
+				{
+					time: '2018-05-09 15:20',
+					name: '联系人1',
+					type: 1,  //别人
+					content: '芬兰首都基辅罗斯的解放螺丝钉解放拉近了送到附近路段时'
+				},
+				{
+					time: '2018-05-09 15:25',
+					name: '目不斜视的女同学',
+					type: 0,  //自己
+					content: '可以的'
+				}	
+			]
+
+
+
 			jQuery(function($) {
-				//点击用户列表
-				$('.chat_content li').on('click', function() {
+				//点击联系人列表
+				$(document).on('click', '.linkman_box li', function() {
 					$(this).addClass('active_user').siblings().removeClass('active_user');
+
+					// 渲染聊天内容
+					var chatContHtml = htmlDiv.chatContList(chatContData);
+					$('.chat_list').html(chatContHtml);
 				})
+
+				//点击用户列表中的选择
+				$(document).on('click', '.chooseList_btn', function() {
+					var userSrc = $(this).parents('table').find('img').attr('src'),
+						userName = $(this).parents('table').find('.user_name').text(),
+						userId = $(this).parents('table').find('.user_id').text();
+
+					$('#user img').attr('src', userSrc);
+					$('#user .name').text(userName);
+					$('#user .id').text("（"+userId+"）");
+					fadeToggleFn($('.user_model')); //关闭弹窗
+
+					// 渲染联系人
+					var linkmanHtml = htmlDiv.linkmanList(linkmanData);
+					$('.linkman_box').html(linkmanHtml);
+				})
+
 			});
+
+			// 点击搜索用户
+			function searchUser($obj) {
+				var inpId = $('input[name="user_id"]').val(),  //输入的id
+					inpIphone = $('input[name="user_iphone"]').val(), //输入的手机号
+					inpName = $('input[name="user_name"]').val(); //输入的昵称
+
+				// 渲染
+				var userHtml = htmlDiv.userList(userData);
+				$obj.html(userHtml);
+			}
 
 			function fadeToggleFn($obj) {
 				$obj.fadeToggle(200);
+				$obj.find('.choose_list').html('');
+			}
+
+			var htmlDiv = {
+				// 渲染用户
+				userList: function(data) {
+					var userDiv = '';
+					$.each(data, function(index, item) {
+						userDiv += '<table class="table table-bordered">';
+						userDiv += '<tr><td rowspan="2" class="center"><img src="'+item.headUrl+'"></td>';
+						userDiv += '<td>用户ID：<span class="user_id">'+item.userId+'</span></td>';
+						userDiv += '<td>昵称：<span class="user_name">'+item.userName+'</span></td>';
+						userDiv += '<td rowspan="2" class="center"><a href="javascript:;" class="chat_btn chooseList_btn">选择</a></td></tr>';
+						userDiv += '<tr><td>手机号：<span>'+item.iphone+'</span></td>';
+						userDiv += '<td>注册时间：<span>'+item.time+'</span></td></tr></table>';
+					})
+					return userDiv;
+				},
+				// 渲染联系人
+				linkmanList: function(data) {
+					var linkmanDiv = '';
+					$.each(data, function(index, item) {
+						linkmanDiv += '<li class="user_card"><img src="'+item.src+'">';
+						linkmanDiv += '<div class="user_data"><p class="name">'+item.name+'</p>';
+						linkmanDiv += '<p class="id">（'+item.id+'）</p></div></li>';
+					})
+					return linkmanDiv;					
+				},
+				// 渲染聊天内容
+				chatContList: function(data) {
+					var chatContDiv = '';
+					$.each(data, function(index, item) {
+						chatContDiv += '<div class="chat_card">';
+						if (item.type == 1) {
+							chatContDiv += '<p class="user_info">';
+						} else {
+							chatContDiv += '<p class="myself_info">';
+						}
+						chatContDiv += '<span class="name">'+item.name+'</span><span class="time">'+item.time+'</span></p>';
+						chatContDiv += '<p class="content">'+item.content+'</p></div>';
+					})
+					return chatContDiv;
+				}
 			}
 		</script>
 	</body>

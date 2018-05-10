@@ -98,7 +98,7 @@
 	padding-bottom: 10px;
 }
 .chat_list .chat_card {
-	padding-bottom: 5px;
+	padding-bottom: 6px;
 }
 .chat_list  p {
 	margin: 0;
@@ -108,6 +108,9 @@
 }
 .chat_list .myself_info {
 	color: #4AA44A;
+}
+.chat_list .user_info .name, .chat_list .myself_info .name {
+	margin-right: 5px;
 }
 
 
