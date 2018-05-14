@@ -4,6 +4,11 @@ html, body {
   font-family: PingFangSC-Medium;
 }
 
+.transition {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
 /* 改变自带的样式 */
 .margin_num {
   height: 9px;
@@ -759,6 +764,190 @@ html, body {
   font-size: 13px;
   color: #999999;
   letter-spacing: 0.2px;
+}
+
+/* swiper */
+.label_swiper {
+  width: 100%;
+  height: 24px;
+  padding-top: 15px;
+  padding-left: 8px;
+  background-color: #fff;
+}
+.label_swiper .swiper-slide {
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.label_swiper .swiper-slide span {
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  color: #696969;
+  padding: 0 12px;
+  border-radius: 50px;
+}
+.label_swiper .label_active span {
+  color: #fff;
+  background-image: linear-gradient(50deg, #FB894B 0%, #F85863 100%);
+}
+
+/* 情说杂志 */
+.qs_magazine {
+  padding-top: 92px;
+}
+.qs_magazine .page_content {
+  display: none;
+}
+.qs_magazine .weui-cells:before, .qs_magazine .weui-cells:after {
+  border: 0;
+}
+.qs_magazine .weui-cell {
+  padding: 15px;
+}
+.qs_magazine .title {
+  font-size: 14px;
+  color: #303030;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.qs_magazine .author {
+  padding: 6px 0 10px;
+  font-size: 12px;
+  color: #696969;
+}
+.qs_magazine .data {
+  font-size: 12px;
+  color: #919191;
+}
+.qs_magazine .data label {
+  margin-right: 5px;
+  padding: 1px 8px;
+  border: 1px solid #5ECBD3;
+  border-radius: 50px;
+  color: #5ECBD3;
+}
+.qs_magazine img {
+  padding-left: 15px;
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+}
+
+#magazine .weui-popup__modal {
+  background-color: #fff;
+  overflow-y: hidden;
+}
+#magazine .popup_top {
+  width: 100%;
+  height: 44px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  background-color: #fff;
+}
+#magazine .popup_top a {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#magazine .popup_top a.close {
+  left: 15px;
+  background-image: url("../images/icon_top_close@2x.png");
+  background-size: contain;
+}
+#magazine .popup_top a.share {
+  right: 15px;
+  background-image: url("../images/icon_top_share@2x.png");
+  background-size: contain;
+}
+#magazine .popup_content {
+  padding: 44px 15px;
+  overflow-y: scroll;
+}
+#magazine .popup_content .weui-cell {
+  padding: 15px 0;
+}
+#magazine .popup_content .title {
+  width: 95%;
+  padding-bottom: 8px;
+  font-size: 20px;
+  color: #303030;
+  letter-spacing: 0.50px;
+}
+#magazine .popup_content .data {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #919191;
+}
+#magazine .popup_content .data label {
+  margin-right: 5px;
+  padding: 1px 8px;
+  border: 1px solid #5ECBD3;
+  border-radius: 50px;
+  color: #5ECBD3;
+}
+#magazine .popup_content .author_info {
+  margin: 15px 0;
+  background: #F8F8F8;
+  border-radius: 4px;
+}
+#magazine .popup_content .author_info .weui-cell {
+  padding: 5px 12px;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+#magazine .popup_content .author_info img {
+  width: 45px;
+  height: 45px;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+#magazine .popup_content .author_info .author {
+  padding: 2px 0 4px;
+  font-size: 14px;
+  color: #303030;
+  letter-spacing: 0.46px;
+}
+#magazine .popup_content .author_info .info {
+  font-size: 12px;
+  color: #878787;
+  letter-spacing: 0.2px;
+}
+#magazine .popup_content .author_info .weui-cell__ft {
+  font-size: 12px;
+  color: #696969;
+}
+#magazine .popup_content .author_info:before, #magazine .popup_content .author_info:after {
+  border: 0;
+}
+#magazine .popup_content .magazine_cont {
+  font-size: 14px;
+  color: #696969;
+  letter-spacing: 0.34px;
+  line-height: 25px;
+}
+#magazine .popup_content .magazine_cont p {
+  padding-bottom: 20px;
 }
 
 /*# sourceMappingURL=qs_weike.css.map */

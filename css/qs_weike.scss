@@ -36,6 +36,10 @@ html, body {
 	background-color: $bg_color;
 	font-family: PingFangSC-Medium;
 }
+.transition {
+	transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
 
 /* 改变自带的样式 */
 .margin_num {
@@ -812,6 +816,196 @@ html, body {
 				font-size: 13px;
 				color: $label_color;
 				letter-spacing: 0.2px;
+			}
+		}
+	}
+}
+
+
+/* swiper */
+.label_swiper {
+    width: 100%;
+    height: 24px;
+    padding-top: 15px;
+    padding-left: 8px;
+    background-color: #fff;
+    & .swiper-slide {
+	    /* Center slide text vertically */
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	    -webkit-justify-content: center;
+	    justify-content: center;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    -webkit-align-items: center;
+	    align-items: center;
+	    & span {
+			height: 24px;
+			line-height: 24px;
+			font-size: 12px;
+			color: $title_color;
+			padding: 0 12px;
+			border-radius: 50px;
+		}
+	}
+	& .label_active {
+		& span {
+			color: #fff;
+			background-image: linear-gradient(50deg, #FB894B 0%, #F85863 100%);
+		}
+	}
+}
+
+/* 情说杂志 */
+.qs_magazine {
+	padding-top: $padding_top+48px;
+	& .page_content {
+		display: none;
+	}
+	& .weui-cells:before,
+	& .weui-cells:after {
+		border: 0;
+	}
+	& .weui-cell {
+		padding: 15px;
+	}
+	& .title {
+		font-size: 14px;
+		color: #303030;
+		width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	    display: -webkit-box;
+	    -webkit-box-orient: vertical;
+	    -webkit-line-clamp: 1;
+	}
+	& .author {
+		padding: 6px 0 10px;
+		font-size: 12px;
+		color: $title_color;
+	}
+	& .data {
+		font-size: 12px;
+		color: #919191;
+		& label {
+			margin-right: 5px;
+			padding: 1px 8px;
+			border: 1px solid #5ECBD3;
+			border-radius: 50px;
+			color: #5ECBD3;
+		}
+	}
+	& img {
+		padding-left: 15px;
+		width: 70px;
+		height: 70px;
+		border-radius: 4px;
+	}
+}
+#magazine {
+	& .weui-popup__modal {
+		background-color: #fff;
+		overflow-y: hidden; 
+	}
+	& .popup_top {
+		width: 100%;
+		height: 44px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 6;
+		background-color: #fff;
+		& a {
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			top: 10px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		& a.close {
+			left: 15px;
+			background-image: url('../images/icon_top_close@2x.png');
+			background-size: contain;
+		}
+		& a.share {
+			right: 15px;
+			background-image: url('../images/icon_top_share@2x.png');
+			background-size: contain;
+		}
+	}
+	& .popup_content {
+		padding: 44px 15px;
+		overflow-y: scroll; 
+		& .weui-cell {
+			padding: 15px 0;
+		}
+		& .title {
+			width: 95%;
+			padding-bottom: 8px;
+			font-size: 20px;
+			color: #303030;
+			letter-spacing: 0.50px;
+		}
+		& .data {
+			height: 20px;
+			line-height: 20px;
+			font-size: 12px;
+			color: #919191;
+			& label {
+				margin-right: 5px;
+				padding: 1px 8px;
+				border: 1px solid #5ECBD3;
+				border-radius: 50px;
+				color: #5ECBD3;
+			}
+		}
+		& .author_info {
+			margin: 15px 0;
+			background: #F8F8F8;
+			border-radius: 4px;
+			& .weui-cell {
+				padding: 5px 12px;
+				-webkit-align-items: flex-start;
+    			align-items: flex-start;
+			}
+			& img {
+				width: 45px;
+				height: 45px;
+				border-radius: 4px;
+				margin-right: 12px;
+			}
+			& .author {
+				padding: 2px 0 4px;
+				font-size: 14px;
+				color: #303030;
+				letter-spacing: 0.46px;
+			}
+			& .info {
+				font-size: 12px;
+				color: #878787;
+				letter-spacing: 0.2px;
+			}
+			& .weui-cell__ft {
+				font-size: 12px;
+				color: $title_color;
+			}
+		}
+		& .author_info:before, 
+		& .author_info:after {
+			border: 0;
+		}
+		& .magazine_cont {
+			font-size: 14px;
+			color: $title_color;
+			letter-spacing: 0.34px;
+			line-height: 25px;
+			& p {
+				padding-bottom: 20px;
 			}
 		}
 	}
