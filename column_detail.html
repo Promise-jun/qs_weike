@@ -173,7 +173,11 @@
 	<script type="text/javascript" src="./js/jquery-weui.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			
+			var isBack = $('.top_box').find('a').hasClass('back'),
+				isShare = $('.top_box').find('a').hasClass('share');
+			$(window).scroll(function() {
+				functionList.scroll_opacity($(this).scrollTop(), $('.top_box'), isBack, isShare);
+			})
 		})
 
 		var functionList = {
@@ -198,6 +202,38 @@
 			paymentFn: function($obj) {
 				// 关闭支付弹窗
 				$.closePopup();
+			},
+			// 滚动改变透明度
+			scroll_opacity: function(scrollNum, $obj, isBack, isShare) {
+				if (scrollNum >= 150) {
+					$obj.addClass('opacity_active');
+					if (isBack) {
+						$obj.find('.back').css({
+							background: 'url("../images/icon_top_back@2x.png") no-repeat center',
+							backgroundSize: 'contain'
+						})
+					}
+					if (isShare) {
+						$obj.find('.share').css({
+							background: 'url("../images/icon_top_share@2x.png") no-repeat center',
+							backgroundSize: 'contain'
+						})
+					}
+				} else {
+					$obj.removeClass('opacity_active');
+					if (isBack) {
+						$obj.find('.back').css({
+							background: 'url("../images/back.png") no-repeat center',
+							backgroundSize: 'contain'
+						})
+					}
+					if (isShare) {
+						$obj.find('.share').css({
+							background: 'url("../images/icon_frequency_share@2x.png") no-repeat center',
+							backgroundSize: 'contain'
+						})
+					}
+				}
 			}
 		}
 	</script>

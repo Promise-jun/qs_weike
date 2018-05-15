@@ -74,7 +74,9 @@ html, body {
 	text-align: center;
 	color: #fff;
 	// background-image: linear-gradient(-179deg, #2E2E30 0%, #59595D 100%);
-	background-image: linear-gradient(0deg, rgba(255,255,255,0.00) 0%, rgba(0,0,0,0.3) 98%);
+	// background-image: linear-gradient(0deg, rgba(255,255,255,0.00) 0%, rgba(0,0,0,0.3) 98%);
+	background: rgba(255, 255, 255, 0);
+	transition: all 0.3s;
 	height: 44px;
 	line-height: 44px;
 	font-size: 18px;
@@ -83,6 +85,9 @@ html, body {
 		top: 10px;
 		width: 24px;
 		height: 24px;
+		& img {
+			width: 100%;
+		}
 	}
 	& a.back {
 		left: 15px;
@@ -94,6 +99,9 @@ html, body {
 		background: url('../images/icon_frequency_share@2x.png') no-repeat center;
 		background-size: contain;
 	}
+}
+.opacity_active {
+	background: rgba(255, 255, 255, 1);
 }
 /* 头部tab切换 */
 .top_tab {
