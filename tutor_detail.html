@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/weui.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/qs_weike.css">
+	<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
 	<script type="text/javascript">
 	    (function (doc, win) {
 	      	var docEl = doc.documentElement,
@@ -34,15 +35,62 @@
 		  	</div>
 		</div>
 	</div>
-	<div class="container audio_column">
-		<div class="binner"><img src="images/bg.jpg"></div>
-		<div class="weui-cells">
-			<div class="weui-cell audio_info">
-			    <div class="weui-cell__bd">
-			      	<p class="title">如何让孩子变得更有教养</p>
-			      	<p class="tool">12节品质课程，让你的孩子变得有教养</p>
-			    </div>
-			    <div class="weui-cell__ft">共10期</div>
+	<div class="container tutor_detail">
+		<div class="binner"><img src="images/icon_background.png"></div>
+		<div class="tutor_info">
+			<div class="tutor_head">
+				<img src="images/timg-head.jpg" alt="">
+				<a href="javascript:;" class="tutor_audio"></a>
+			</div>
+			<div class="tutor_data">
+				<p>
+					<span class="name">杨蕾</span>
+					<!-- 女：sex_woman   男：sex_man -->
+					<span class="sex_woman"></span>
+					<!-- 在线：on_line  离线：off_line -->
+					<span class="on_line"></span>
+				</p>
+				<p>
+					<span class="location">浙江 杭州</span>
+					<span class="grade">评分 5.0 </span>
+				</p>
+			</div>
+		</div>
+		<div class="weui-flex tutor_num">
+		  	<div class="weui-flex__item">
+		  		<p class="num">256</p>
+		  		<p class="tool">已咨询人数</p>
+		  	</div>
+		  	<div class="weui-flex__item">
+		  		<p class="num">2478</p>
+		  		<p class="tool">粉丝</p>
+		  	</div>
+		  	<div class="weui-flex__item">
+		  		<p class="num">129</p>
+		  		<p class="tool">收到感谢</p>
+		  	</div>
+		</div>
+
+		<div class="margin_num"></div>
+
+		<!-- 相册 -->
+		<div class="tutor_pic">
+			<p class="title">相册</p>
+			<div class="swiper-container pic_swiper">
+				 <div class="swiper-wrapper">
+		            <div class="swiper-slide">
+		            	<img src="images/timg-head.jpg">
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="images/bg.jpg">
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="images/timg2.jpg">
+		            </div>
+		             <div class="swiper-slide">
+		            	<img src="images/rule_case2.png">
+		            </div>
+		        </div>
 			</div>
 		</div>
 
@@ -56,57 +104,7 @@
 		  	</div>
 		</div>
 		<div class="audio_box">
-			<div class="audio_detail">
-				<p>如何让孩子变得更有教养的内容简单介绍如何让孩子变得更有教养的内容简单介绍如何让</p>
-				<p>养的内容简单介绍如何让孩子变得更有教养的内容简单介绍如何让孩子变得更有教养的内容简单介绍如何让孩子变得更</p>
-			</div>
-			<div class="weui-cells audio_list" style="display: none;">
-				<a href="javascript:;" class="weui-cell">
-				    <div class="weui-cell__hd">
-				    	<div class="shade"></div>
-				    	<img src="images/timg-head.jpg">
-				    </div>
-				    <div class="weui-cell__bd">
-				      	<p class="title">自我中心不等于自私</p>
-				      	<p class="play_num">播放量:3245次</p>
-				      	<p class="audio_data">
-				      		<span>214</span>
-				      		<span>32:00</span>
-				      	</p>
-				    </div>
-				    <div class="weui-cell__ft">08-14</div>
-				</a>
-				<a href="javascript:;" class="weui-cell">
-				    <div class="weui-cell__hd">
-				    	<div class="shade"></div>
-				    	<img src="images/timg-head.jpg">
-				    </div>
-				    <div class="weui-cell__bd">
-				      	<p class="title">自我中心不等于自私</p>
-				      	<p class="play_num">播放量:3245次</p>
-				      	<p class="audio_data">
-				      		<span>214</span>
-				      		<span>32:00</span>
-				      	</p>
-				    </div>
-				    <div class="weui-cell__ft">08-14</div>
-				</a>
-				<a href="javascript:;" class="weui-cell">
-				    <div class="weui-cell__hd">
-				    	<div class="shade"></div>
-				    	<img src="images/timg-head.jpg">
-				    </div>
-				    <div class="weui-cell__bd">
-				      	<p class="title">自我中心不等于自私</p>
-				      	<p class="play_num">播放量:3245次</p>
-				      	<p class="audio_data">
-				      		<span>214</span>
-				      		<span>32:00</span>
-				      	</p>
-				    </div>
-				    <div class="weui-cell__ft">08-14</div>
-				</a>
-			</div>
+			
 		</div>
 
 		<div class="margin_num" style="height: 59px;"></div>
@@ -127,6 +125,7 @@
 	<!-- body 最后 -->
 	<script type="text/javascript" src="./js/jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+	<script type="text/javascript" src="./js/swiper_weui.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			var tabTop = $('.top_tab').offset().top,
@@ -167,6 +166,39 @@
 				$('.audio_box>div').eq(index).fadeIn(200);
 				$('.foot_fixed>div').eq(index).show().siblings('div').hide();
 			})
+
+
+			// swiper
+			var picItems = [
+				"images/timg-head.jpg",
+			    "images/bg.jpg",
+			    "images/timg2.jpg",
+			    "images/rule_case2.png"
+		    ]
+			var picSwiper = new Swiper('.pic_swiper', {
+		        slidesPerView: 3.2,
+		        breakpoints: { 
+				    //当宽度小于等于480
+				    480: {
+				      spaceBetween: 10
+				    },
+				   //当宽度小于等于750
+				    750: { 
+				      spaceBetween: 20
+				    },
+				    //当宽度小于等于1242
+				    1242: {
+				      spaceBetween: 30
+				    }
+				},
+				onTap: function(swiper){
+					var pic = $.photoBrowser({
+						items: picItems,
+						initIndex: swiper.clickedIndex
+					});
+					pic.open()
+			    }
+		    });
 		})
 
 		var functionList = {

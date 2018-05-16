@@ -25,7 +25,8 @@
 }
 
 $bg_color: #F0F0F0;          //背景色
-$label_color: #999999;       //标签色
+$label_color: #919191;       //标签色
+$main_title: #303030;        //主标题
 $title_color: #696969;       //标题色
 $theme_color: #FD7A60;       //主题色
 $theme_font_color: #FF5A1C;  //主题文字颜色
@@ -197,7 +198,7 @@ html, body {
 	& .info {
 		font-family: PingFangSC-Regular;
 		font-size: 16px;
-		color: #303030;
+		color: $main_title;
 		letter-spacing: 0.45px;
 		background-color: #fff;
 		& .weui-cells:before, & .weui-cells:after {
@@ -217,7 +218,7 @@ html, body {
 			}
 			& .name {
 				font-size: 13px;
-				color: #303030;
+				color: $main_title;
 			}
 			& .weui-cell__ft {
 				font-size: 12px;
@@ -293,7 +294,7 @@ html, body {
 		& .weui-media-box__title {
 			padding-bottom: 4px;
 			font-size: 15px;
-			color: #303030;
+			color: $main_title;
 			& .label {
 				padding-left: 5px;
 				font-size: 12px;
@@ -318,7 +319,7 @@ html, body {
 			}
 			& .name {
 				font-size: 13px;
-				color: #303030;
+				color: $main_title;
 			}
 			& a.follow_btn {
 				display: block;
@@ -448,7 +449,7 @@ html, body {
 	& .info {
 		font-family: PingFangSC-Regular;
 		font-size: 16px;
-		color: #303030;
+		color: $main_title;
 		letter-spacing: 0.45px;
 		background-color: #fff;
 		& .weui-cells:before, & .weui-cells:after {
@@ -490,7 +491,7 @@ html, body {
 			}
 			& .name {
 				font-size: 13px;
-				color: #303030;
+				color: $main_title;
 			}
 			& a.follow_btn {
 				display: block;
@@ -595,7 +596,7 @@ html, body {
 				font-family: PingFangSC-Medium;
 				& .title {
 					font-size: 14px;
-					color: #303030;
+					color: $main_title;
 					line-height: 25px;
 				}
 				& .human_qi {
@@ -867,6 +868,34 @@ html, body {
 		}
 	}
 }
+.pic_swiper {
+    width: 100%;
+    height: pxrem(200);
+    & .swiper-slide {
+	    /* Center slide text vertically */
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	    -webkit-justify-content: center;
+	    justify-content: center;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    -webkit-align-items: center;
+	    align-items: center;
+	    & img {
+			width: 100%;
+		}
+	}
+	& .label_active {
+		& span {
+			color: #fff;
+			background-image: linear-gradient(50deg, #FB894B 0%, #F85863 100%);
+		}
+	}
+}
 
 /* 情说杂志 */
 .qs_magazine {
@@ -883,7 +912,7 @@ html, body {
 	}
 	& .title {
 		font-size: 14px;
-		color: #303030;
+		color: $main_title;
 		width: 100%;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -956,7 +985,7 @@ html, body {
 			width: 95%;
 			padding-bottom: 8px;
 			font-size: 20px;
-			color: #303030;
+			color: $main_title;
 			letter-spacing: 0.50px;
 		}
 		& .data {
@@ -990,7 +1019,7 @@ html, body {
 			& .author {
 				padding: 2px 0 4px;
 				font-size: 14px;
-				color: #303030;
+				color: $main_title;
 				letter-spacing: 0.46px;
 			}
 			& .info {
@@ -1016,5 +1045,179 @@ html, body {
 				padding-bottom: 20px;
 			}
 		}
+	}
+}
+
+/* 导师详情 */
+.tutor_detail {
+	& .binner {
+		width: 100%;
+		height: pxrem(240);
+	}
+	& .tutor_info {
+		width: 100%;
+		height: 75px;
+		background-color: #fff;
+		position: relative;
+	}
+	& .tutor_head {
+		width: 85px;
+		height: 85px;
+		left: 20px;
+		top: -30px;
+		position: absolute;
+		& img {
+			width: 100%;
+			border: 2px solid #FFFFFF;
+			border-radius: 50%;
+			box-shadow: 0 3px 10px #D7D7D7;
+		}
+		& .tutor_audio {
+			position: absolute;
+			right: 2px;
+			bottom: 2px;
+			width: 20px;
+			height: 20px;
+			background-image: url('../images/speech.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+	}
+	& .tutor_data {
+		margin-left: 120px;
+		& p:first-child {
+			padding: 4px 0;
+		}
+		& .name {
+			display: inline-block;
+			font-size: 16px;
+			color: $main_title;
+			letter-spacing: 0.5px;
+		}
+		& .sex_woman {
+			padding: 0 6px 0 3px;
+			display: inline-block;
+			vertical-align: middle;
+			width: 16px;
+			height: 16px;
+			background: url('../images/girl.png') no-repeat center;
+			background-size: contain;
+		}
+		& .sex_man {
+			padding: 0 6px 0 3px;
+			display: inline-block;
+			vertical-align: middle;
+			width: 16px;
+			height: 16px;
+			background: url('../images/boy.png') no-repeat center;
+			background-size: contain;
+		}
+		& .on_line {
+			display: inline-block;
+			vertical-align: middle;
+			width: 38px;
+			height: 18px;
+			background: url('../images/on-line.png') no-repeat center;
+			background-size: contain;
+		}
+		& .off_line {
+			display: inline-block;
+			vertical-align: middle;
+			width: 38px;
+			height: 18px;
+			background: url('../images/off-line.png') no-repeat center;
+			background-size: contain;
+		}
+		& .location {
+			padding-right: 10px;
+			border-right: 1px solid #D7D7D7; 
+			margin-right: 7px;
+			font-size: 12px;
+			color: $label_color;
+			letter-spacing: 0.2px;
+		}
+		& .grade {
+			font-size: 12px;
+			color: $label_color;
+			letter-spacing: 0;
+		}
+	}
+	& .tutor_num {
+		position: relative;
+		height: 45px;
+		background-color: #fff;
+		&:before {
+			content: " ";
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    height: 1px;
+		    color: #D7D7D7;
+		    z-index: 2;
+		    top: 0;
+		    border-top: 1px solid #D7D7D7;
+		    -webkit-transform-origin: 0 0;
+		    transform-origin: 0 0;
+		    -webkit-transform: scaleY(.5);
+		    transform: scaleY(.5);
+		}
+		& .weui-flex__item {
+			display: -webkit-flex; /* Safari */
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		& .weui-flex__item:not(:first-child) {
+			position: relative;
+			&:before {
+				content: " ";
+			    position: absolute;
+			    top: 0;
+			    bottom: 0;
+			    width: 1px;
+			    color: #D7D7D7;
+			    z-index: 2;
+			    left: 0;
+			    border-left: 1px solid #D7D7D7;
+			    -webkit-transform-origin: 0 0;
+			    transform-origin: 0 0;
+			    -webkit-transform: scaleX(.5);
+			    transform: scaleX(.5);
+			}
+		}
+		& .num {
+			font-size: 12px;
+			color: $title_color;
+			letter-spacing: 0.2px;
+		}
+		& .tool {
+			font-size: 10px;
+			color: $label_color;
+			letter-spacing: 0.18px;
+		}
+	}
+	& .tutor_pic {
+		padding: 8px 15px 12px;
+		background-color: #fff;
+		& .title {
+			padding-left: 10px;
+			margin-bottom: 8px;
+			background: url('../images/detail-classify.png') no-repeat left center;
+			background-size: 3px 15px;
+			font-size: 12px;
+			color: $title_color;
+		}
+	}
+}
+.weui-photo-browser-modal {
+	z-index: 6666;
+}
+.photo-container {
+	justify-content: center;
+	& img {
+		max-height: 100%;
+		width: 100%;
 	}
 }

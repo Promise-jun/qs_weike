@@ -210,7 +210,8 @@
 		    	})
 		    })
 			var labelSwiper = new Swiper('.label_swiper', {
-		        slidesPerView: 'auto'
+		        slidesPerView: 'auto',
+		        slideToClickedSlide: true
 		    });
 		    $('.label_swiper .swiper-slide').on('click', function() {
 		    	$(this).addClass('label_active').siblings().removeClass('label_active');
