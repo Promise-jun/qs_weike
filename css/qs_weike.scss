@@ -1050,6 +1050,10 @@ html, body {
 
 /* 导师详情 */
 .tutor_detail {
+	& .top_tab {
+		z-index: 6;
+		width: 100%;
+	}
 	& .binner {
 		width: 100%;
 		height: pxrem(240);
@@ -1208,6 +1212,279 @@ html, body {
 			background-size: 3px 15px;
 			font-size: 12px;
 			color: $title_color;
+		}
+	}
+	& .tutor_box {
+		background-color: #fff;
+		& .page_content {
+			display: none;
+		}
+		& .tutor_label {
+			overflow: hidden;
+			padding: 15px 15px 6px;
+			& span {
+				float: left;
+				padding: 2px 8px;
+				margin: 0 9px 9px 0;
+				background: rgba(240, 240, 240, .5);
+				border-radius: 50px;
+				font-size: 11px;
+				color: #BDBDBD;
+				letter-spacing: 0.2px;
+			}
+		}
+		& .introduce_card {
+			font-size: 14px;
+			letter-spacing: 0.05px;
+			line-height: 26px;
+			& .title {
+				padding: 0 15px;
+				color: $main_title;
+				& span {
+					margin-left: 8px;
+				}
+			}
+			& .card_cont {
+				padding: 4px 15px 10px;
+				color: $title_color;
+			}
+			& .user_evaluation {
+				padding: 10px 15px;
+			}
+		}
+		& .evaluation_link {
+			overflow: hidden;
+			& a {
+				float: left;
+				padding: 3px 13px 4px;
+				margin: 0 10px 12px 0;
+				border: 1px solid #BDBDBD;
+				border-radius: 50px;
+				font-size: 12px;
+				color: #BDBDBD;
+				line-height: normal;
+			}
+			& a.evaluation_active {
+				color: $theme_font_color;
+				border-color: $theme_font_color;
+			}
+		}
+		& .evaluation_ul:before,
+		& .evaluation_ul:after {
+			border: 0;
+		}
+		& .evaluation_li:before {
+		    content: " ";
+		    position: absolute;
+		    left: 15px;
+		    right: 0;
+		    height: 1px;
+		    color: #D7D7D7;
+		    z-index: 2;
+		    bottom: 0;
+		    border-bottom: 1px solid #D7D7D7;
+		    -webkit-transform-origin: 0 0;
+		    transform-origin: 0 0;
+		    -webkit-transform: scaleY(.5);
+		    transform: scaleY(.5);
+		}
+		& .evaluation_li:first-child {
+			padding-top: 5px;
+		}
+		& .evaluation_li {
+			padding: 15px;
+			position: relative;
+			& .weui-cell {
+				font-size: 0;
+				padding: 0;
+				-webkit-align-items: flex-start;
+    			align-items: flex-start;
+				& img {
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					margin-right: 6px;
+				}
+				& .name {
+					font-size: 14px;
+					color: $title_color;
+					letter-spacing: 0.4px;
+				}
+				& .star_box {
+					font-size: 0;
+					margin-left: 3px;
+				}
+				& .on_star {
+					display: inline-block;
+					margin-left: 4px;
+					width: 12px;
+					height: 12px;
+					background: url('../images/icon_grade_pre@2x.png') no-repeat center;
+					background-size: contain;
+				}
+				& .off_star {
+					display: inline-block;
+					margin-left: 4px;
+					width: 12px;
+					height: 12px;
+					background: url('../images/icon_grade_nor@2x.png') no-repeat center;
+					background-size: contain;
+				}
+				& .evaluation_time {
+					font-size: 10px;
+					color: $label_color;
+					letter-spacing: 0.28px;
+				}
+				& .weui-cell__ft {
+					font-size: 12px;
+					color: $label_color;
+					letter-spacing: 0.33px;
+				}
+			}
+			& .evaluation_text {
+				padding: 8px 0 10px;
+				font-size: 12px;
+				color: $label_color;
+				letter-spacing: 0.33px;
+				line-height: 20px;
+			}
+			& .tutor_reply {
+				background: #F3F8F7;
+				padding: 7px 6px;
+				& .label {
+					float: left;
+					font-size: 12px;
+					color: $theme_font_color;
+				}
+				& .content {
+					margin-left: 64px;
+					font-size: 12px;
+					color: $title_color;
+				}
+			}
+		}
+		& .all_evaluation {
+			font-size: 14px;
+			color: $title_color;
+			letter-spacing: 0.05px;
+		}
+		& .all_evaluation:before {
+			border: 0;
+		}
+	}
+	& .course {
+		padding: 15px pxrem(20) 0;
+		overflow: hidden;
+		& .adolesce_list:nth-child(odd) {
+			margin-right: pxrem(20);
+		}
+	}
+	& .adolesce_list {
+		float: left;
+		width: pxrem(345);
+		padding-bottom: 15px;
+		& .adolesce_binner {
+			width: 100%;
+			height: pxrem(181);
+			margin-bottom: 6px;
+			border-radius: 4px;
+			position: relative;
+			background-image: url('../images/bg.jpg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% auto;
+		}
+		& .play_icon {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			right: 8px;
+			bottom: 6px;
+			background: url('../images/icon_play_voice@2x.png') no-repeat center;
+			background-size: contain;
+		}
+		& .title {
+			width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		    display: -webkit-box;
+		    -webkit-box-orient: vertical;
+		    -webkit-line-clamp: 1;
+			font-size: 12px;
+			color: $title_color;
+		}
+		& .data {
+			padding: 8px 0;
+			font-size: 0px;
+			color: #878686;
+			& span {
+				font-size: 10px;
+				padding-left: pxrem(30);
+				background-repeat: no-repeat;
+				background-position: left center;
+				background-size: pxrem(22) auto;
+			}
+			& span:not(:first-child) {
+				margin-left: pxrem(30);
+			}
+			& span:first-child {
+				background-image: url('../images/icon_home_name@2x.png');
+			}
+			& span:nth-child(2) {
+				background-image: url('../images/icon_home_comment@2x.png');
+			}
+			& span:last-child {
+				background-image: url('../images/icon_home_listen@2x.png');
+			}
+		}
+		& .price {
+			font-size: 12px;
+			color: $theme_font_color;
+		}
+		& .free {
+			font-size: 12px;
+			color: #5ECBD3;
+		}
+	}
+	& .magazine {
+		& .weui-cells:before,
+		& .weui-cells:after {
+			border: 0;
+		}
+		& .weui-cell {
+			padding: 15px;
+		}
+		& .title {
+			font-size: 14px;
+			color: $main_title;
+			width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		    display: -webkit-box;
+		    -webkit-box-orient: vertical;
+		    -webkit-line-clamp: 1;
+		}
+		& .author {
+			padding: 6px 0 10px;
+			font-size: 12px;
+			color: $title_color;
+		}
+		& .data {
+			font-size: 12px;
+			color: #919191;
+			& label {
+				margin-right: 5px;
+				padding: 1px 8px;
+				border: 1px solid #5ECBD3;
+				border-radius: 50px;
+				color: #5ECBD3;
+			}
+		}
+		& img {
+			padding-left: 15px;
+			width: 70px;
+			height: 70px;
+			border-radius: 4px;
 		}
 	}
 }
