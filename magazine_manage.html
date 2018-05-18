@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="assets/css/jquery.gritter.css" />
 		<link rel="stylesheet" href="assets/css/select2.css" />
 		<link rel="stylesheet" href="assets/css/bootstrap-editable.css" />
-
+		<link rel="stylesheet" href="assets/css/daterangepicker.css" />
 		<!-- fonts -->
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
@@ -51,6 +51,7 @@
 		<![endif]-->
 		
 		<!-- 增加 -->
+		<link rel="stylesheet" type="text/css" href="add/iconfont.css">
 		<link rel="stylesheet" type="text/css" href="add/magazine.css">
 	</head>
 
@@ -712,6 +713,48 @@
 						
 						<!-- 聊天记录 -->
 						<div class="row magazine_manage">
+							<!-- 查询条件 -->
+							<div class="col-xs-12 query_condition">
+								<div class="col-xs-3 input-group">
+									<span class="input-group-addon">
+										导师姓名
+									</span>
+									<select id="tutorName">
+										<option value="">选择导师</option>
+										<option value="李易峰">李易峰</option>
+										<option value="吴彦祖">吴彦祖</option>
+										<option value="刘德华">刘德华</option>
+									</select>
+								</div>
+								<div class="col-xs-3 input-group">
+									<span class="input-group-addon">
+										时间
+									</span>
+									<input class="form-control" type="text" name="date-range-picker" id="id-date-range-picker-1">
+								</div>
+								<div class="col-xs-2 input-group">
+									<span class="input-group-addon">
+										是否上架
+									</span>
+									<select>
+										<option value="0">是</option>
+										<option value="1">否</option>
+									</select>
+								</div>
+								<div class="col-xs-2 input-group">
+									<span class="input-group-addon">
+										是否推荐
+									</span>
+									<select>
+										<option value="0">是</option>
+										<option value="1">否</option>
+									</select>
+								</div>
+								<div class="col-xs-2 input-group">
+									<button class="btn btn-sm btn-info">查询</button>
+								</div>
+							</div>
+
 							<div class="col-xs-12">
 								<ul class="magazine">
 									<li>
@@ -722,13 +765,25 @@
 											<p class="title">每天我都在这里说故事1111111</p>
 											<p class="tool">情感杂志</p>
 											<p class="data">
+												<span class="author">李易峰</span>
+												<span class="glance_over">2030浏览</span>
+												<span class="collect">942收藏</span>
 												<span class="time">今天23:00</span>
-												<span class="num">2030浏览</span>
 											</p>
 										</div>
 										<div class="li_ft">
-											<a href="javascript:;" onclick="del_fn($(this))" class="del_btn">删除</a>
-											<a href="javascript:;" class="edit_btn">编辑</a>
+											<a href="javascript:;" title="推荐" onclick="groom_toggle($(this))">
+												<i class="iconfont icon-tuijian"></i>
+											</a>
+											<a href="javascript:;" title="上架" onclick="frame_toggle($(this))">
+												<i class="iconfont icon-shangjia"></i>
+											</a>
+											<a href="javascript:;" title="编辑">
+												<i class="iconfont icon-bianji"></i>
+											</a>
+											<a href="javascript:;" title="删除" onclick="del_fn($(this))" class="del_btn">
+												<i class="iconfont icon-icon7"></i>
+											</a>
 										</div>
 									</li>
 									<li>
@@ -736,16 +791,28 @@
 											<img src="add/upload_head/timg-head.jpg">
 										</div>
 										<div class="li_bd">
-											<p class="title">每天我都在这里说故事222222</p>
+											<p class="title">每天我都在这里说故事1111111</p>
 											<p class="tool">情感杂志</p>
 											<p class="data">
+												<span class="author">李易峰</span>
+												<span class="glance_over">2030浏览</span>
+												<span class="collect">942收藏</span>
 												<span class="time">今天23:00</span>
-												<span class="num">2030浏览</span>
 											</p>
 										</div>
 										<div class="li_ft">
-											<a href="javascript:;" onclick="del_fn($(this))" class="del_btn">删除</a>
-											<a href="javascript:;" class="edit_btn">编辑</a>
+											<a href="javascript:;" title="推荐" onclick="groom_toggle($(this))">
+												<i class="iconfont icon-tuijian"></i>
+											</a>
+											<a href="javascript:;" title="上架" onclick="frame_toggle($(this))">
+												<i class="iconfont icon-shangjia"></i>
+											</a>
+											<a href="javascript:;" title="编辑">
+												<i class="iconfont icon-bianji"></i>
+											</a>
+											<a href="javascript:;" title="删除" onclick="del_fn($(this))" class="del_btn">
+												<i class="iconfont icon-icon7"></i>
+											</a>
 										</div>
 									</li>
 									<li>
@@ -753,16 +820,28 @@
 											<img src="add/upload_head/timg-head.jpg">
 										</div>
 										<div class="li_bd">
-											<p class="title">每天我都在这里说故事3333333</p>
+											<p class="title">每天我都在这里说故事1111111</p>
 											<p class="tool">情感杂志</p>
 											<p class="data">
+												<span class="author">李易峰</span>
+												<span class="glance_over">2030浏览</span>
+												<span class="collect">942收藏</span>
 												<span class="time">今天23:00</span>
-												<span class="num">2030浏览</span>
 											</p>
 										</div>
 										<div class="li_ft">
-											<a href="javascript:;" onclick="del_fn($(this))" class="del_btn">删除</a>
-											<a href="javascript:;" class="edit_btn">编辑</a>
+											<a href="javascript:;" title="推荐" onclick="groom_toggle($(this))">
+												<i class="iconfont icon-tuijian"></i>
+											</a>
+											<a href="javascript:;" title="上架" onclick="frame_toggle($(this))">
+												<i class="iconfont icon-shangjia"></i>
+											</a>
+											<a href="javascript:;" title="编辑">
+												<i class="iconfont icon-bianji"></i>
+											</a>
+											<a href="javascript:;" title="删除" onclick="del_fn($(this))" class="del_btn">
+												<i class="iconfont icon-icon7"></i>
+											</a>
 										</div>
 									</li>
 								</ul>
@@ -890,6 +969,10 @@
 		<script src="assets/js/x-editable/bootstrap-editable.min.js"></script>
 		<script src="assets/js/x-editable/ace-editable.min.js"></script>
 		<script src="assets/js/jquery.maskedinput.min.js"></script>
+		
+
+		<script src="assets/js/date-time/moment.min.js"></script>
+		<script src="assets/js/date-time/daterangepicker.min.js"></script>
 
 		<!-- ace scripts -->
 
@@ -901,10 +984,27 @@
 		<!-- 增加 -->
 		<!-- 分页 -->
 		<script type="text/javascript" src="add/jqPaginator.min.js"></script>
+		<script type="text/javascript" src="add/bootbox.min.js"></script>
+		<!-- select -->
+		<script type="text/javascript" src="add/jquery.combo.select.js"></script>
 
 		<script type="text/javascript">
 
 			jQuery(function($) {
+				// select
+				$('#tutorName').comboSelect();
+
+				$('input[name=date-range-picker]').daterangepicker({
+					"locale": {
+	                    applyLabel: "应用",
+	                    cancelLabel: "取消",
+	                    fromLabel : '从',  
+                		toLabel : '至' 
+	                }
+				}).prev().on(ace.click_event, function(){
+					$(this).next().focus();
+				});
+
 				// 分页
 				$('#pageCont').jqPaginator({
 				    totalPages: 100,
@@ -925,25 +1025,53 @@
 				$obj.fadeToggle(200);
 			}
 
-			// 点击删除
-			var delObj = {
-				type: '',
-				index: null
-			}
-			function del_fn($obj) {
-				$('#modalBody').text('确定要删除该杂志吗？');
-				delObj.type = 'del';
-				delObj.index = $obj.parents('li').index();
-				$('#exampleModal').modal('show');
+
+			// 点击推荐
+			function groom_toggle($obj) {
+				if ($obj.hasClass('active_btn')) { //取消推荐
+					bootbox.confirm("确定要取消推荐该杂志吗？?", function(result) {
+						if (result) {
+							$obj.removeClass('active_btn');
+							$obj.attr('title', '推荐');
+						}
+				 	});
+				} else { //推荐
+				 	bootbox.confirm("确定要推荐该杂志吗？?", function(result) {
+						if (result) {
+							$obj.addClass('active_btn');
+							$obj.attr('title', '取消推荐');
+						}
+				 	});
+				}
 			}
 
-			// 点击弹窗的确定
-			$('#delPicBtn').click(function() {
-				if (delObj.type == 'del') { //删除
-					$('.magazine li').eq(delObj.index).remove();
+			// 点击上下架
+			function frame_toggle($obj) {
+				if ($obj.hasClass('active_btn')) { //下架
+					bootbox.confirm("确定要下架该杂志吗？?", function(result) {
+						if (result) {
+							$obj.removeClass('active_btn');
+							$obj.attr('title', '上架');
+						}
+				 	});
+				} else { //上架
+				 	bootbox.confirm("确定要上架该杂志吗？?", function(result) {
+						if (result) {
+							$obj.addClass('active_btn');
+							$obj.attr('title', '下架');
+						}
+				 	});
 				}
-				$('#exampleModal').modal('hide');
-			})
+			}
+
+			// 点击删除
+			function del_fn($obj) {
+				bootbox.confirm("确定要删除该杂志吗？?", function(result) {
+					if (result) {
+						$obj.parents('li').remove();
+					}
+			 	});
+			}
 		</script>
 	</body>
 </html>

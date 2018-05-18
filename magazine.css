@@ -53,20 +53,42 @@
 	color: #919191;
 	letter-spacing: 0.62px;
 }
-.magazine .data .time {
+.magazine .data span {
 	padding-right: 10px;
 }
 .magazine .li_ft a {
 	font-family: PingFangSC-Medium;
 	font-size: 20px;
-	color: #919191;
+	color: #9FA8BC;
 	letter-spacing: 0.89px;
+}
+.magazine .li_ft a:not(:last-child) {
+	margin-right: 5px;
+}
+.magazine .li_ft a.active_btn {
+	color: #FF5A1C;
 }
 .magazine .li_ft a:hover {
 	text-decoration: none;
 }
-.magazine .li_ft .edit_btn {
-	margin-left: 50px;
+.magazine .li_ft .del_btn {
+	color: #FC6076;
+}
+.query_condition>div {
+	height: 34px;
+	margin-bottom: 10px;
+}
+.query_condition .combo-select,
+.query_condition select {
+	width: 100%;
+	height: 34px;
+}
+.query_condition .combo-select input {
+	height: 32px;
+}
+.query_condition button {
+	padding: 0 15px !important;
+	height: 34px;
 }
 
 
@@ -104,9 +126,11 @@
 	text-decoration: none;
 }
 
-
+.magazine_upload>div {
+	margin-bottom: 30px;
+}
 .magazine_upload h4 {
-	padding: 0 30px;
+	padding: 0 15px;
 }
 .flex_card {
 	padding: 20px 0;
@@ -141,8 +165,29 @@
 	color: #303030;
 	letter-spacing: 0.22px;
 }
-
-
+.add_pic {
+	display: block;
+	width: 250px;
+	height: 250px;
+	text-align: center;
+	border: 1px solid #E6E6E6;
+	border-radius: 4px;
+	background: #F9F9F9 url('../add/icon_personal data_add.png') no-repeat center 63px;
+	font-size: 12px;
+	color: #919191;
+	letter-spacing: 0.4px;
+	line-height: 20px;
+}
+.add_pic p:first-child {
+	font-size: 14px;
+	color: #303030;
+	letter-spacing: 0.47px;
+	margin: 115px 0 12px;
+}
+.add_pic:link {
+	text-decoration: none;
+	color: #919191;
+}
 
 
 

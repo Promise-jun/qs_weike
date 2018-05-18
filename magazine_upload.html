@@ -706,38 +706,101 @@
 					<div class="page-content">
 						
 						<div class="row magazine_upload">
-							<h4>杂志信息</h4>
-							<hr>
-							<div class="col-xs-12 flex_card">
-								<div class="hd"></div>
-								<div class="bd">
-									<input type="text" name="magazine_title" placeholder="请输入杂志标题">
+							<div class="col-xs-12">
+								<h4>杂志信息</h4>
+								<hr>
+								<div class="col-xs-12 flex_card">
+									<div class="hd"></div>
+									<div class="bd">
+										<input type="text" name="magazine_title" placeholder="请输入杂志标题">
+									</div>
+								</div>
+								<div class="col-xs-3 flex_card">
+									<div class="hd"></div>
+									<div class="bd">
+										<input type="text" name="magazine_keyword" placeholder="请输入关键词">
+									</div>
+								</div>
+								<div class="col-xs-3 flex_card">
+									<div class="hd"></div>
+									<div class="bd">
+										<select id="tutorName">
+											<option value="">选择导师</option>
+											<option value="李易峰">李易峰</option>
+											<option value="吴彦祖">吴彦祖</option>
+											<option value="刘德华">刘德华</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-xs-3 flex_card">
+									<div class="hd"></div>
+									<div class="bd">
+										<select id="grounding">
+											<option value="">是否上架</option>
+											<option value="0">是</option>
+											<option value="1">否</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-xs-3 flex_card">
+									<div class="hd"></div>
+									<div class="bd">
+										<select id="groom">
+											<option value="">是否推荐</option>
+											<option value="0">是</option>
+											<option value="1">否</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-xs-4 flex_card">
+									<div class="hd"></div>
+									<div class="bd">
+										<select id="magazineType">
+											<option value="">选择杂志类型</option>
+											<option value="情感杂志">情感杂志</option>
+											<option value="成长杂志">成长杂志</option>
+											<option value="亲子杂志">亲子杂志</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-xs-4 flex_card">
+									<div class="hd"></div>
+									<div class="bd">
+										<select id="magazineField">
+											<option value="">选择杂志领域</option>
+											<option value="杂志领域1">杂志领域1</option>
+											<option value="杂志领域2">杂志领域2</option>
+											<option value="杂志领域3">杂志领域3</option>
+										</select>
+									</div>
 								</div>
 							</div>
-							<div class="col-xs-4 flex_card">
-								<div class="hd"></div>
-								<div class="bd">
-									<select id="magazineType">
-										<option value="">选择杂志类型</option>
-										<option value="情感杂志">情感杂志</option>
-										<option value="成长杂志">成长杂志</option>
-										<option value="亲子杂志">亲子杂志</option>
-									</select>
+							<div class="col-xs-12">
+								<h4>编辑杂志</h4>
+								<hr>
+								<div class="col-xs-12 flex_card">
+									<div class="hd"></div>
+									<div class="bd">
+										<div id="editor">
+									        
+									    </div>
+									</div>
 								</div>
 							</div>
-							<div class="col-xs-4 flex_card">
-								<div class="hd"></div>
-								<div class="bd">
-									<select id="magazineField">
-										<option value="">选择杂志领域</option>
-										<option value="杂志领域1">杂志领域1</option>
-										<option value="杂志领域2">杂志领域2</option>
-										<option value="杂志领域3">杂志领域3</option>
-									</select>
+							<div class="col-xs-12">
+								<h4>上传杂志封面</h4>
+								<hr>
+								<div class="col-xs-12 flex_card">
+									<div class="hd"></div>
+									<div class="bd">
+										<a href="javascript:;" class="add_pic">
+											<p>上传封面</p>
+											<p>支持png／jpg格式<br />不超过10M</p>
+										</a>
+									</div>
 								</div>
 							</div>
 						</div><!-- /.row -->
-
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
 
@@ -865,14 +928,28 @@
 		<!-- inline scripts related to this page -->
 
 		<!-- 增加 -->
-		<!-- 分页 -->
+		<!-- select -->
 		<script type="text/javascript" src="add/jquery.combo.select.js"></script>
+		<!-- 富文本编辑器 -->
+		<script type="text/javascript" src="add/wangEditor.min.js"></script>
 
 		<script type="text/javascript">
 
 			jQuery(function($) {
+				// select
+				$('#tutorName').comboSelect();
+				$('#grounding').comboSelect();
+				$('#groom').comboSelect();
 				$('#magazineType').comboSelect();
 				$('#magazineField').comboSelect();
+
+				// wangEditor
+				var E = window.wangEditor;
+		        var editor = new E('#editor');
+		        editor.create()
+
+		        // 设置内容
+		        editor.txt.html('<p>在这里编辑你的杂志吧！！！</p>');
 			});
 
 			function fadeToggleFn($obj) {
