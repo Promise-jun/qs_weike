@@ -30,6 +30,7 @@
 	<div class="top_fixed">
 		<div class="weui-flex top_box">
 		  	<div class="weui-flex__item">
+		  		<span id="tutorName"></span>
 		  		<a href="javascript:;" class="back"></a>
 		  		<a href="javascript:;" class="share"></a>
 		  	</div>
@@ -93,8 +94,6 @@
 		        </div>
 			</div>
 		</div>
-
-		<div class="margin_num"></div>
 
 		<div class="weui-flex top_tab">
 		  	<div class="weui-flex__item active_tab">介绍</div>
@@ -250,20 +249,82 @@
 				    </div>
 				    <div class="weui-cell__ft"><img src="images/timg-head.jpg"></div>
 				</div>
+				<div class="weui-cell">
+				    <div class="weui-cell__bd">
+				      	<p class="title">从节后开工的状态，就能看到你的未来从节后开工的状态，就能看到你的未来</p>
+				      	<p class="author">主讲：李小冉</p>
+				      	<p class="data">
+				      		<label>专题</label>
+				      		<span>30293浏览</span>
+				      	</p>
+				    </div>
+				    <div class="weui-cell__ft"><img src="images/timg-head.jpg"></div>
+				</div>
+				<div class="weui-cell">
+				    <div class="weui-cell__bd">
+				      	<p class="title">从节后开工的状态，就能看到你的未来从节后开工的状态，就能看到你的未来</p>
+				      	<p class="author">主讲：李小冉</p>
+				      	<p class="data">
+				      		<label>专题</label>
+				      		<span>30293浏览</span>
+				      	</p>
+				    </div>
+				    <div class="weui-cell__ft"><img src="images/timg-head.jpg"></div>
+				</div>
 			</div>
 		</div>
 
 		<div class="margin_num" style="height: 59px;"></div>
 	</div>
 	<div class="foot_fixed">
-		<!--  未购买 -->
-		<div>
-			<a href="javascript:functionList.footBtnFn();">¥89.9订阅</a>
-		</div>
-		<div class="audio_list_btns" style="display: none;">
-			<a href="javascript:;">试听</a>
-			<a href="javascript:functionList.footBtnFn();">¥89.9购买</a>
-		</div>
+		<a href="javascript::" class="weui-flex__item add_follow" onclick="functionList.followFn($(this))">+关注</a>
+		<a href="javascript::" class="weui-flex__item place_order" onclick="functionList.orderFn()">立即下单</a>
+		<a href="javascript::" class="weui-flex__item talk_privately">私聊</a>
+	</div>
+
+
+	<!-- popup -->
+	<div id="magazine" class="weui-popup__container">
+	  	<div class="weui-popup__overlay"></div>
+	  	<div class="weui-popup__modal">
+	    	<div class="popup_top">
+	    		<a href="javascript:;" class="close close-popup"></a>
+	    		<a href="javascript:;" class="share"></a>
+	    	</div>
+	    	<div class="popup_content">
+				<div class="weui-cell weui-cells">
+				    <div class="weui-cell__bd">
+				      	<p class="title">从节后开工的状态，就能看到你的未来</p>
+				      	<p class="data">
+				      		<label>专题</label>
+				      		<span>30293阅读</span>
+				      	</p>
+				    </div>
+				</div>
+
+				<div class="weui-cells author_info">
+					<a class="weui-cell weui-cell_access" href="javascript:;">
+						<div class="weui-cell__hd"><img src="images/timg-head.jpg"></div>
+					    <div class="weui-cell__bd">
+					      	<p class="author">作者：咨询师杨蕾</p>
+					      	<p class="info">国家注册二级心理咨询师</p>
+					    </div>
+					    <div class="weui-cell__ft">
+							查看相关
+					    </div>
+					</a>
+				</div>
+
+				<div class="magazine_cont">
+					<p>人的自信到底从何而来？以及如何培养自己的自信？高度的自信，从高度的自律而来。自律又是什么？自律就是自己管理自己，自己约束自己。这是一个很重要的能力。先学会克制自己，用严格的日程表来控制生活，才能在这种自律中不断磨练出自信。自信也代表着对事情的控制能力，连最基本的时间都控制不了，谈何自信？</p>
+					<p>除了自律以外，自黑的能力也相当重要。世界之大，什么鸟都有。等你哪一天稍微做出点成绩，很多认识或不认识的人便在背后，唧唧歪歪的议论是非。从最开始的吐槽，到断章取义的论断甚至无趣的黑你。</p>
+					<p>自黑就是自己嘲笑自己，自己黑色幽默自己。自黑是一种沟通方式，也是一种境界，更是一种另类的修养。自黑不是等到有人说你时才出现，而是从头到尾都需要有。</p>
+					<p>人的自信到底从何而来？以及如何培养自己的自信？高度的自信，从高度的自律而来。自律又是什么？自律就是自己管理自己，自己约束自己。这是一个很重要的能力。先学会克制自己，用严格的日程表来控制生活，才能在这种自律中不断磨练出自信。自信也代表着对事情的控制能力，连最基本的时间都控制不了，谈何自信？</p>
+					<p>除了自律以外，自黑的能力也相当重要。世界之大，什么鸟都有。等你哪一天稍微做出点成绩，很多认识或不认识的人便在背后，唧唧歪歪的议论是非。从最开始的吐槽，到断章取义的论断甚至无趣的黑你。</p>
+					<p>自黑就是自己嘲笑自己，自己黑色幽默自己。自黑是一种沟通方式，也是一种境界，更是一种另类的修养。自黑不是等到有人说你时才出现，而是从头到尾都需要有。</p>
+				</div>
+	    	</div>
+	  	</div>
 	</div>
 
 	<!-- body 最后 -->
@@ -272,12 +333,19 @@
 	<script type="text/javascript" src="./js/swiper_weui.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
+			// 判断有无相册
+			if (!$('.pic_swiper .swiper-slide').length) {
+				$('.tutor_pic').hide();
+			}
+
+
 			var tabTop = $('.top_tab').offset().top,
 				topBoxH = $('.top_box').innerHeight(),
+				tutorName = $('.tutor_data .name').text(),
 				isBack = $('.top_box').find('a').hasClass('back'),
 				isShare = $('.top_box').find('a').hasClass('share');
 			$(window).scroll(function() {
-				functionList.scroll_opacity($(this).scrollTop(), $('.top_box'), isBack, isShare);
+				functionList.scroll_opacity($(this).scrollTop(), $('.top_box'), tutorName, isBack, isShare);
 				if ($(this).scrollTop() >= (tabTop - topBoxH)) {
 					$('.top_tab').css({
 						position: 'fixed',
@@ -348,13 +416,18 @@
 		    $(document).on('click', '.evaluation_link a', function() {
 		    	$(this).addClass('evaluation_active').siblings().removeClass('evaluation_active');
 		    })
+
+
+		    // 点击杂志打开详情
+		    $(document).on('click', '.magazine .weui-cell', function() {
+		    	$("#magazine").popup();
+		    	$('.popup_content').css({
+		    		height: $(window).innerHeight() - 44
+		    	})
+		    })
 		})
 
 		var functionList = {
-			// 点击底部按钮
-			footBtnFn: function() {
-				alert(1)
-			},
 			// tab切换改变line位置
 			changeLine: function(index, len, leftNum, $lineObj) {
 				$lineObj.animate({
@@ -362,9 +435,10 @@
 				}, 200);
 			},
 			// 滚动改变透明度
-			scroll_opacity: function(scrollNum, $obj, isBack, isShare) {
+			scroll_opacity: function(scrollNum, $obj, tutorName, isBack, isShare) {
 				if (scrollNum >= 150) {
 					$obj.addClass('opacity_active');
+					$obj.find('span').text(tutorName);
 					if (isBack) {
 						$obj.find('.back').css({
 							background: 'url("../images/icon_top_back@2x.png") no-repeat center',
@@ -379,6 +453,7 @@
 					}
 				} else {
 					$obj.removeClass('opacity_active');
+					$obj.find('span').text('');
 					if (isBack) {
 						$obj.find('.back').css({
 							background: 'url("../images/back.png") no-repeat center',
@@ -392,6 +467,54 @@
 						})
 					}
 				}
+			},
+			// 是否关注
+			followFn: function($obj) {
+				if ( $obj.hasClass('is_follow') ) {
+					$obj.removeClass('is_follow');
+					$obj.text('+关注');
+					$.toast("已取消关注");
+				} else {
+					$obj.addClass('is_follow');
+					$obj.text('已关注');
+					$.toast("关注成功");
+				}
+			},
+			// 立即下单
+			orderFn: function() {
+				$.actions({
+					title: '请选择服务内容',
+					actions: [
+						{
+						    text: "分析当前所面临的困境",
+						    className: 'react_style',
+						    onClick: function() {
+						      	//do something
+						    }
+						},
+						{
+						    text: "指导分析情感性困惑",
+						    className: 'react_style',
+						    onClick: function() {
+						      	//do something
+						    }
+						},
+						{
+						    text: "孩子青春期培养和心理辅导",
+						    className: 'react_style',
+						    onClick: function() {
+						      	//do something
+						    }
+						},
+						{
+						    text: "焦虑抑郁自闭",
+						    className: 'react_style',
+						    onClick: function() {
+						      	//do something
+						    }
+						}
+					]
+				});
 			}
 		}
 	</script>

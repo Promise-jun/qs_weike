@@ -7,7 +7,7 @@
 	<!-- head 中 -->
 	<link rel="stylesheet" type="text/css" href="./css/weui.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/dropload.css">
+	<link rel="stylesheet" type="text/css" href="./css/mescroll.css">
 	<link rel="stylesheet" type="text/css" href="./css/qs_weike.css">
 	<script type="text/javascript">
 	    (function (doc, win) {
@@ -25,13 +25,31 @@
       		doc.addEventListener('DOMContentLoaded', recalc, false)
 	    })(document, window)
 	 </script>
+	 <style type="text/css">
+	 	#dataList0,
+	 	#dataList1,
+	 	#dataList2 {
+	 		overflow: hidden;
+	 	}
+	 	#mescroll0,
+	 	#mescroll1,
+	 	#mescroll2 {
+	 		width: 100%;
+	 		height: auto;
+	 		position: fixed;
+			top: 44px;
+			bottom: 0;
+			overflow-y: auto;
+    		-webkit-overflow-scrolling: touch;
+	 	}
+	 </style>
 </head>
 <body>
 	<div class="top_fixed">
 		<div class="weui-flex top_tab">
-		  	<div class="weui-flex__item active_tab">全部</div>
-		  	<div class="weui-flex__item">成长课堂</div>
-		  	<div class="weui-flex__item">成长音频</div>
+		  	<div class="weui-flex__item active_tab" i="0">全部</div>
+		  	<div class="weui-flex__item" i="1">成长课堂</div>
+		  	<div class="weui-flex__item" i="2">成长音频</div>
 		  	<div class="line_box">
 		  		<div class="line"></div>
 		  	</div>
@@ -41,135 +59,168 @@
 
 		<div class="margin_num"></div>
 		<!-- 全部 -->
-		<div class="page_content" style="display: block;">
-			<div class="adolesce_list">
-				<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');">
-					<div class="play_icon"></div>
-				</div>
-				<div class="title">原来你也在这里</div>
-				<div class="data">
-					<span>李四川</span>
-					<span>220</span>
-					<span>220</span>
-				</div>
-				<div class="price">¥ 18.9</div>
-			</div>
-			<div class="adolesce_list">
-				<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');"></div>
-				<div class="title">心理咨询师到底是什么人？</div>
-				<div class="data">
-					<span>李四川</span>
-					<span>220</span>
-					<span>220</span>
-				</div>
-				<div class="free">免费</div>
-			</div>
-			<div class="adolesce_list">
-				<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');">
-					<div class="play_icon"></div>
-				</div>
-				<div class="title">原来你也在这里</div>
-				<div class="data">
-					<span>李四川</span>
-					<span>220</span>
-					<span>220</span>
-				</div>
-				<div class="price">¥ 18.9</div>
-			</div>
+		<div class="page_content" id="mescroll0" style="display: block;">
+			<ul id="dataList0">
+
+			</ul>
 		</div>
 		<!-- 成长课程 -->
-		<div class="page_content">
-			<div class="adolesce_list">
-				<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');"></div>
-				<div class="title">心理咨询师到底是什么人？</div>
-				<div class="data">
-					<span>李四川</span>
-					<span>220</span>
-					<span>220</span>
-				</div>
-				<div class="free">免费</div>
-			</div>
-			<div class="adolesce_list">
-				<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');"></div>
-				<div class="title">心理咨询师到底是什么人？</div>
-				<div class="data">
-					<span>李四川</span>
-					<span>220</span>
-					<span>220</span>
-				</div>
-				<div class="free">免费</div>
-			</div>
+		<div class="page_content" id="mescroll1">
+			<ul id="dataList1">
+
+			</ul>
 		</div>
 		<!-- 成长音频 -->
-		<div class="page_content">
-			<div class="adolesce_list">
-				<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');">
-					<div class="play_icon"></div>
-				</div>
-				<div class="title">原来你也在这里</div>
-				<div class="data">
-					<span>李四川</span>
-					<span>220</span>
-					<span>220</span>
-				</div>
-				<div class="price">¥ 18.9</div>
-			</div>
-			<div class="adolesce_list">
-				<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');">
-					<div class="play_icon"></div>
-				</div>
-				<div class="title">原来你也在这里</div>
-				<div class="data">
-					<span>李四川</span>
-					<span>220</span>
-					<span>220</span>
-				</div>
-				<div class="price">¥ 18.9</div>
-			</div>
-			<div class="adolesce_list">
-				<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');">
-					<div class="play_icon"></div>
-				</div>
-				<div class="title">原来你也在这里</div>
-				<div class="data">
-					<span>李四川</span>
-					<span>220</span>
-					<span>220</span>
-				</div>
-				<div class="price">¥ 18.9</div>
-			</div>
-			<div class="adolesce_list">
-				<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');">
-					<div class="play_icon"></div>
-				</div>
-				<div class="title">原来你也在这里</div>
-				<div class="data">
-					<span>李四川</span>
-					<span>220</span>
-					<span>220</span>
-				</div>
-				<div class="price">¥ 18.9</div>
-			</div>
+		<div class="page_content" id="mescroll2">
+			<ul id="dataList2">
+
+			</ul>
 		</div>
 	</div>
 
 	<!-- body 最后 -->
 	<script type="text/javascript" src="./js/jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="./js/jquery-weui.min.js"></script>
-	<script type="text/javascript" src="./js/dropload.min.js"></script>
+	<script type="text/javascript" src="./js/mescroll.js"></script>
+	<script type="text/javascript" src="./js/pdlist1.js"></script>
 	<script type="text/javascript">
 		$(function() {
+			var curNavIndex=0;//全部0; 成长课程1; 成长音频2;
+			var mescrollArr=new Array(3);//3个菜单所对应的3个mescroll对象
+			//初始化首页
+			mescrollArr[0]=initMescroll("mescroll0", "dataList0");
+
+
 			// tab切换
 			var len = $('.top_tab .weui-flex__item').length,
 				leftNum = 12; //初始距离左边的百分比
 				$lineObj = $('.line_box .line');
 			$('.top_tab .weui-flex__item').on('click', function() {
 				var index = $(this).index();
-				functionList.changeLine(index, len, leftNum, $lineObj);
-				$(this).addClass('active_tab').siblings().removeClass('active_tab');
-				$('.qs_adolesce .page_content').hide();
-				$('.qs_adolesce .page_content').eq(index).fadeIn(300);
+				var i=Number($(this).attr("i"));
+				// $('.qs_adolesce .page_content').hide();
+				// $('.qs_adolesce .page_content').eq(index).fadeIn(300);
+
+				
+				if(curNavIndex!=i) {
+					functionList.changeLine(index, len, leftNum, $lineObj);
+					$(this).addClass('active_tab').siblings().removeClass('active_tab');
+					//隐藏当前列表
+					$("#mescroll"+curNavIndex).hide();
+					//显示对应的列表
+					curNavIndex=i;
+					$("#mescroll"+curNavIndex).show();
+					//取出菜单所对应的mescroll对象,如果未初始化则初始化
+					if(mescrollArr[i]==null) mescrollArr[i]=initMescroll("mescroll"+i, "dataList"+i);
+				}
 			})
+
+			/*创建MeScroll对象*/
+			function initMescroll(mescrollId,clearEmptyId){
+				//创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,刷新列表数据;
+				var mescroll = new MeScroll(mescrollId, {
+					//上拉加载的配置项
+					up: {
+						callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
+						noMoreSize: 4, //如果列表已无数据,可设置列表的总数量要大于半页才显示无更多数据;避免列表数据过少(比如只有一条数据),显示无更多数据会不好看; 默认5
+						empty: {
+							icon: "./images/mescroll-empty.png", //图标,默认null
+							tip: "暂无相关数据~", //提示
+							btntext: "去逛逛 >", //按钮,默认""
+							btnClick: function(){//点击按钮的回调,默认null
+								alert("点击了按钮,具体逻辑自行实现");
+							} 
+						},
+						clearEmptyId: clearEmptyId //相当于同时设置了clearId和empty.warpId; 简化写法;默认null
+					}
+				});
+				return mescroll;
+			}
+
+			/*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
+			function getListData(page){
+				//联网加载数据
+				console.log("curNavIndex="+curNavIndex+", page.num="+page.num);
+				getListDataFromNet(curNavIndex, page.num, page.size, function(data){
+					//联网成功的回调,隐藏下拉刷新和上拉加载的状态;
+					console.log("data.length="+data.length);
+					mescrollArr[curNavIndex].endSuccess(data.length);//传参:数据的总数; mescroll会自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
+					//设置列表数据
+					setListData(data);
+				}, function(){
+					//联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+	                mescrollArr[curNavIndex].endErr();
+				});
+			}
+
+			/*设置列表数据*/
+			function setListData(data){
+
+				// var listDom=document.getElementById("dataList"+curNavIndex);
+				var $listDom=$('#dataList'+curNavIndex);
+
+				for (var i = 0; i < data.length; i++) {
+					var pd=data[i];
+					
+					var str = htmlFn(data[i]);
+
+					$listDom.append(str);
+				}
+			}
+
+			/*联网加载列表数据*/
+			function getListDataFromNet(curNavIndex,pageNum,pageSize,successCallback,errorCallback) {
+				//延时一秒,模拟联网
+                setTimeout(function () {
+             		// $.ajax({
+		             //    type: 'GET',
+		             //    url: 'xxx',
+		             //    url: 'data.json?curNavIndex='+curNavIndex+'&num='+pageNum+'&size='+pageSize,
+		             //    dataType: 'json',
+		             //    success: function(data){
+		                	var data=pdlist1;
+		                	var listData=[];
+		                	
+		                	//curNavIndex 全部0; 成长课程1; 成长音频2;
+		                	if(curNavIndex==0){
+		                		//全部 (模拟分页数据)
+								for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
+				            		if(i==data.length) break;
+				            		listData.push(data[i]);
+				            	}
+								
+		                	}else if(curNavIndex==1){
+		                		//成长课程
+		                		for (var i = 0; i < data.length; i++) {
+		                			if(i==data.length) break;
+				            		listData.push(data[i]);
+		                			// if (data[i].pdName.indexOf("奶粉")!=-1) {
+		                			// 	listData.push(data[i]);
+		                			// }
+		                		}
+		                		
+		                	}else if(curNavIndex==2){
+		                		//成长音频
+		                		for (var i = 0; i < data.length; i++) {
+		                			if(i==data.length) break;
+				            		listData.push(data[i]);
+		                			// if (data[i].pdName.indexOf("面膜")!=-1) {
+		                			// 	listData.push(data[i]);
+		                			// }
+		                		}
+		                		
+		                	}
+		                	
+		                	//回调
+		                	successCallback(listData);
+		            //     },
+		            //     error: errorCallback
+		            // });
+                },400)
+			}
+			
+			//禁止PC浏览器拖拽图片,避免与下拉刷新冲突;如果仅在移动端使用,可删除此代码
+			document.ondragstart=function() {return false;}
 		})
 
 		var functionList = {
@@ -181,109 +232,24 @@
 			}
 		}
 
-		// dropload
-		var counter = 0;
-	    // 每页展示4个
-	    var num = 4;
-	    var pageStart = 0,pageEnd = 0;
-	    
-	    $('.container').dropload({
-	        scrollArea : window,
-	        loadUpFn : function(me){
-	            /*$.ajax({
-	                type: 'GET',
-	                url: 'json/update.json',
-	                dataType: 'json',
-	                success: function(data){
-	                    var result = '';
-	                    for(var i = 0; i < data.lists.length; i++){
-	                        result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
-	                                        +'<img src="'+data.lists[i].pic+'" alt="">'
-	                                        +'<h3>'+data.lists[i].title+'</h3>'
-	                                        +'<span class="date">'+data.lists[i].date+'</span>'
-	                                    +'</a>';
-	                    }
-	                    // 为了测试，延迟1秒加载
-	                    setTimeout(function(){
-	                        $('.lists').html(result);
-	                        // 每次数据加载完，必须重置
-	                        me.resetload();
-	                        // 重置索引值，重新拼接more.json数据
-	                        counter = 0;
-	                        // 解锁
-	                        me.unlock();
-	                        me.noData(false);
-	                    },1000);
-	                },
-	                error: function(xhr, type){
-	                    alert('Ajax error!');
-	                    // 即使加载出错，也得重置
-	                    me.resetload();
-	                }
-	            });*/
-	            // console.log($('.weui-navbar .weui-bar__item--on').index())
-	            console.log(111)
-	            // 为了测试，延迟1秒加载
-                setTimeout(function(){
-                    // 每次数据加载完，必须重置
-                    me.resetload();
-                    // 解锁
-                    me.unlock();
-                    me.noData(false);
-                },1000);
-	        },
-	        loadDownFn : function(me){
-	            /*$.ajax({
-	                type: 'GET',
-	                url: 'json/more.json',
-	                dataType: 'json',
-	                success: function(data){
-	                    var result = '';
-	                    counter++;
-	                    pageEnd = num * counter;
-	                    pageStart = pageEnd - num;
 
-	                    for(var i = pageStart; i < pageEnd; i++){
-	                        result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
-	                                        +'<img src="'+data.lists[i].pic+'" alt="">'
-	                                        +'<h3>'+data.lists[i].title+'</h3>'
-	                                        +'<span class="date">'+data.lists[i].date+'</span>'
-	                                    +'</a>';
-	                        if((i + 1) >= data.lists.length){
-	                            // 锁定
-	                            me.lock();
-	                            // 无数据
-	                            me.noData();
-	                            break;
-	                        }
-	                    }
-	                    // 为了测试，延迟1秒加载
-	                    setTimeout(function(){
-	                        $('.lists').append(result);
-	                        // 每次数据加载完，必须重置
-	                        me.resetload();
-	                    },1000);
-	                },
-	                error: function(xhr, type){
-	                    alert('Ajax error!');
-	                    // 即使加载出错，也得重置
-	                    me.resetload();
-	                }
-	            });*/
-	            // console.log($('.weui-navbar .weui-bar__item--on').index())
-	            console.log(222)
-	            // 为了测试，延迟1秒加载
-                setTimeout(function(){
-                	// 锁定
-                    me.lock();
-                    // 无数据
-                    me.noData();
-                    // 每次数据加载完，必须重置
-                    me.resetload();
-                },1000);
-	        },
-	        threshold : 50
-	    });
+
+	    function htmlFn(data) {
+	    	var divs = "";
+    		divs += '<div class="adolesce_list">';
+    		divs += '<div class="adolesce_binner" style="background-image: url('+data.img+');">';
+    		divs += '<div class="play_icon"></div>';
+    		divs += '</div>';
+    		divs += '<div class="title">'+data.title+'</div>';
+    		divs += '<div class="data">';
+    		divs += '<span>'+data.author+'</span>';
+    		divs += '<span>'+data.num+'</span>';
+    		divs += '<span>'+data.num+'</span>';
+    		divs += '</div>';
+    		divs += '<div class="price">¥ 18.9</div>';
+    		divs += '</div>';
+			return divs;
+	    }
 	</script>
 </body>
 </html>

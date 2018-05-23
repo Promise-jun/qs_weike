@@ -63,6 +63,18 @@ html, body {
 .weui-dialog__btn {
 	color: $theme_color;
 }
+.weui-actionsheet__title {
+	height: 40px;
+	font-size: 14px;
+	color: $title_color;
+	background-color: $bg_color;
+}
+.react_style {
+	font-size: 16px;
+	color: $title_color;
+	padding: 12px 0;
+}
+
 
 .top_fixed {
 	position: fixed;
@@ -99,6 +111,9 @@ html, body {
 		right: 15px;
 		background: url('../images/icon_frequency_share@2x.png') no-repeat center;
 		background-size: contain;
+	}
+	& #tutorName {
+		color: $main_title;
 	}
 }
 .opacity_active {
@@ -140,15 +155,18 @@ html, body {
 	width: 100%;
 	z-index: 66;
 	font-family: PingFangSC-Regular;
-	& a {
-		display: block;
-		text-align: center;
-		height: 50px;
-		line-height: 50px;
-		background-color: $theme_color;
-		font-size: 18px;
-		color: #FFFFFF;
-		letter-spacing: 1px;
+	font-size: 0;
+	&>div {
+		& a {
+			display: block;
+			text-align: center;
+			height: 50px;
+			line-height: 50px;
+			background-color: $theme_color;
+			font-size: 18px;
+			color: #FFFFFF;
+			letter-spacing: 1px;
+		}
 	}
 	& .audio_list_btns {
 		& a {
@@ -173,6 +191,34 @@ html, body {
 			background: url('../images/icon_batch_download@2x.png') no-repeat left center;
 			background-size: 20px auto;
 		}
+	}
+	& a.weui-flex__item {
+		display: inline-block;
+		font-size: 16px;
+		letter-spacing: 0.5px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+	& a.add_follow {
+		width: 26%;
+		background-color: #fff;
+		color: $theme_font_color;
+	}
+	& a.is_follow {
+		color: $label_color;
+	}
+	& a.place_order {
+		width: 36%;
+		background: #EBEBEB;
+		color: $title_color;
+	}
+	& a.talk_privately {
+		width: 38%;
+		background: $theme_color;
+		font-size: 18px;
+		color: #FFFFFF;
+		letter-spacing: 0.6px;
 	}
 }
 
@@ -817,9 +863,26 @@ html, body {
 				letter-spacing: 0.18px;
 			}
 			& .audio_data {
-				font-size: 12px;
+				font-size: 0;
 				color: $label_color;
 				letter-spacing: 0.18px;
+				& span {
+					padding-left: 15px;
+					font-size: 12px;
+					background-repeat: no-repeat;
+					background-position: left center;
+				}
+				& span:first-child {
+					background-image: url('../images/discuss.png');
+					background-size: 11px auto;
+					padding-right: 8px;
+					margin-right: 8px;
+					border-right: 1px solid #999999;
+				}
+				& span:last-child {
+					background-image: url('../images/time.png');
+					background-size: 11px auto;
+				}
 			}
 			& .weui-cell__ft {
 				font-size: 13px;
@@ -1205,6 +1268,7 @@ html, body {
 	& .tutor_pic {
 		padding: 8px 15px 12px;
 		background-color: #fff;
+		margin-bottom: 9px;
 		& .title {
 			padding-left: 10px;
 			margin-bottom: 8px;

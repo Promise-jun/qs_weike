@@ -36,6 +36,19 @@ html, body {
   color: #FD7A60;
 }
 
+.weui-actionsheet__title {
+  height: 40px;
+  font-size: 14px;
+  color: #696969;
+  background-color: #F0F0F0;
+}
+
+.react_style {
+  font-size: 16px;
+  color: #696969;
+  padding: 12px 0;
+}
+
 .top_fixed {
   position: fixed;
   top: 0;
@@ -71,6 +84,9 @@ html, body {
   right: 15px;
   background: url("../images/icon_frequency_share@2x.png") no-repeat center;
   background-size: contain;
+}
+.top_box #tutorName {
+  color: #303030;
 }
 
 .opacity_active {
@@ -114,8 +130,9 @@ html, body {
   width: 100%;
   z-index: 66;
   font-family: PingFangSC-Regular;
+  font-size: 0;
 }
-.foot_fixed a {
+.foot_fixed > div a {
   display: block;
   text-align: center;
   height: 50px;
@@ -146,6 +163,34 @@ html, body {
   padding: 5px 0 5px 27px;
   background: url("../images/icon_batch_download@2x.png") no-repeat left center;
   background-size: 20px auto;
+}
+.foot_fixed a.weui-flex__item {
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.foot_fixed a.add_follow {
+  width: 26%;
+  background-color: #fff;
+  color: #FF5A1C;
+}
+.foot_fixed a.is_follow {
+  color: #919191;
+}
+.foot_fixed a.place_order {
+  width: 36%;
+  background: #EBEBEB;
+  color: #696969;
+}
+.foot_fixed a.talk_privately {
+  width: 38%;
+  background: #FD7A60;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0.6px;
 }
 
 .container > .binner {
@@ -764,9 +809,26 @@ html, body {
   letter-spacing: 0.18px;
 }
 .audio_column .audio_box .audio_list .audio_data {
-  font-size: 12px;
+  font-size: 0;
   color: #919191;
   letter-spacing: 0.18px;
+}
+.audio_column .audio_box .audio_list .audio_data span {
+  padding-left: 15px;
+  font-size: 12px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.audio_column .audio_box .audio_list .audio_data span:first-child {
+  background-image: url("../images/discuss.png");
+  background-size: 11px auto;
+  padding-right: 8px;
+  margin-right: 8px;
+  border-right: 1px solid #999999;
+}
+.audio_column .audio_box .audio_list .audio_data span:last-child {
+  background-image: url("../images/time.png");
+  background-size: 11px auto;
 }
 .audio_column .audio_box .audio_list .weui-cell__ft {
   font-size: 13px;
@@ -1142,6 +1204,7 @@ html, body {
 .tutor_detail .tutor_pic {
   padding: 8px 15px 12px;
   background-color: #fff;
+  margin-bottom: 9px;
 }
 .tutor_detail .tutor_pic .title {
   padding-left: 10px;

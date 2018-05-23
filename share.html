@@ -63,6 +63,11 @@
 			letter-spacing: 0.5px;
 		}
 		.live_telecast p:last-child {
+			margin: 0 auto;
+			width: 66.7%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
 			font-size: 16px;
 			color: #303030;
 			letter-spacing: 0.45px;
@@ -73,30 +78,25 @@
 			margin-top: 21px;
 			margin-left: 16%;
 		}
-		.download_btns, .open_app {
+		.download_btns {
 			width: 100%;
 			height: 100%;
 		}
-		.download_btns a:first-child {
-			display: block;
-			width: 100%;
-			height: 45%;
-			background: url('images/Andriod@2x.png') no-repeat left center;
-			background-size: contain;
-			margin-bottom: 12px;
-		}
-		.download_btns a:last-child {
-			display: block;
-			width: 100%;
-			height: 45%;
-			background: url('images/app_store@2x.png') no-repeat left center;
-			background-size: contain;
-		}
-		.open_app a {
+		.download_btns a {
 			margin-top: 50px;
 			display: block;
 			width: 100%;
 			height: 45%;
+		}
+		.download_btns a.android{
+			background: url('images/Andriod@2x.png') no-repeat left center;
+			background-size: contain;
+		}
+		.download_btns a.ios {
+			background: url('images/app_store@2x.png') no-repeat left center;
+			background-size: contain;
+		}
+		.download_btns a.open {
 			background: url('images/icon_open_app@2x.png') no-repeat left center;
 			background-size: contain;
 		}
@@ -112,18 +112,12 @@
 	</div>
 	<div class="live_telecast">
 		<p>主播正在直播</p>
-		<p>直播间：和你说晚安</p>
+		<p>直播间：和你说晚安和你说晚安和你说晚安和你</p>
 	</div>
 	<div class="foot_btns">
-		<!-- 未下载app -->
 		<div class="download_btns">
-			<a href="javascript:;"></a>
-			<a href="javascript:;"></a>
+			<a href="javascript:;" class="android"></a>
 		</div>
-		<!-- 已下载app -->
-		<!-- <div class="open_app">
-			<a href="javascript:;"></a>
-		</div> -->
 	</div>
 </body>
 </html>
