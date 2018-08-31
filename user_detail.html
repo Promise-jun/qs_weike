@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>情说微课-音频专栏</title>
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
+	<script type="text/javascript">
+	    (function (doc, win) {
+	      	var docEl = doc.documentElement,
+	     	resizeEvt = 'orientationchange' in window
+	        	? 'orientationchange'
+	        	: 'resize',
+	      	recalc = function () {
+	        	var clientWidth = docEl.clientWidth
+	        	if (!clientWidth) return
+	       		docEl.style.fontSize = clientWidth / 18.75 + 'px'
+	      	}
+      		if (!doc.addEventListener) return
+      		win.addEventListener(resizeEvt, recalc, false)
+      		doc.addEventListener('DOMContentLoaded', recalc, false)
+	    })(document, window)
+	</script>
+	<!-- head 中 -->
+	<link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/qs_weike.css">
+	<style type="text/css">
+	 	#dataList {
+	 		overflow: hidden;
+	 	}
+	 	.loadMore_box {
+	 		display: none;
+	 		padding-bottom: 10px;
+	 		text-align: center;
+	 	}
+	 	.loadMore {
+	 		font-size: 12px;
+	 		color: #FD7A60;
+	 	}
+	 	.tutor_detail .magazine .weui-cell {
+	 		padding: 15px 0;
+	 	}
+	 	.top_tab .line_box .twoTab {
+	 		width: 8%;
+	 		left: 21%;
+	 	}
+	 </style>
+</head>
+<body>
+	<div class="top_fixed">
+		<div class="weui-flex top_box">
+		  	<div class="weui-flex__item">
+		  		<span id="tutorName"></span>
+		  		<a href="javascript:;" class="back"></a>
+		  		<a href="javascript:;" class="share"></a>
+		  	</div>
+		</div>
+	</div>
+	<div class="container tutor_detail">
+		<div class="binner"><img src="images/icon_background.png"></div>
+		<div class="tutor_info">
+			<div class="tutor_head">
+				<img src="images/timg-head.jpg" alt="">
+				<a href="javascript:;" class="tutor_audio"></a>
+			</div>
+			<div class="tutor_data">
+				<p>
+					<span class="name">杨蕾</span>
+					<!-- 女：sex_woman   男：sex_man -->
+					<span class="sex_woman"></span>
+					<!-- 在线：on_line  离线：off_line -->
+					<span class="on_line"></span>
+				</p>
+				<p>
+					<span class="location">浙江 杭州</span>
+					<span class="grade">评分 5.0 </span>
+				</p>
+			</div>
+		</div>
+		<div class="weui-flex tutor_num">
+		  	<div class="weui-flex__item">
+		  		<p class="num">256</p>
+		  		<p class="tool">已咨询人数</p>
+		  	</div>
+		  	<div class="weui-flex__item">
+		  		<p class="num">2478</p>
+		  		<p class="tool">粉丝</p>
+		  	</div>
+		  	<div class="weui-flex__item">
+		  		<p class="num">129</p>
+		  		<p class="tool">收到感谢</p>
+		  	</div>
+		</div>
+
+		<div class="margin_num"></div>
+
+		<!-- 相册 -->
+		<div class="tutor_pic">
+			<p class="title">相册</p>
+			<div class="swiper-container pic_swiper">
+				 <div class="swiper-wrapper">
+		            <div class="swiper-slide">
+		            	<img src="images/timg-head.jpg">
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="images/bg.jpg">
+		            </div>
+		            <div class="swiper-slide">
+		            	<img src="images/timg2.jpg">
+		            </div>
+		             <div class="swiper-slide">
+		            	<img src="images/rule_case2.png">
+		            </div>
+		        </div>
+			</div>
+		</div>
+
+		<div class="weui-flex top_tab">
+		  	<div class="weui-flex__item active_tab">介绍</div>
+		  	<div class="weui-flex__item">动态</div>
+		  	<div class="line_box">
+		  		<div class="line twoTab"></div>
+		  	</div>
+		</div>
+		<div class="tutor_box">
+			<div class="page_content introduce" style="display: block;">
+				<!-- 用户资料 -->
+                <div class="personal-data">
+                	<div>
+                		<div>身高</div>
+                		<div>165cm</div>
+                	</div>
+                	<div>
+                		<div>职业</div>
+                		<div>设计师</div>
+                	</div>
+                	<div>
+                		<div>情感状态</div>
+                		<div>保密</div>
+                	</div>
+                	<div>
+                		<div>兴趣爱好</div>
+                		<div>旅行、美食、游泳</div>
+                	</div>
+                </div>
+			</div>
+			<div class="page_content">
+				<ul class="dynamic">
+					<!-- 带图 -->
+					<div>
+						<div class="header">
+							<div class="left"><img src="http://img5.imgtn.bdimg.com/it/u=2603106351,1754876058&fm=26&gp=0.jpg"></div>
+							<div class="right">
+								<p class="author">
+									<span class="name">甜甜的小糖</span>
+									<span class="sex woman"></span>
+								</p>
+								<p class="time">2小时前</p>
+							</div>
+						</div>
+						<div class="content">
+							<div class="title">面对即将到来的高中生活？</div>
+							<div class="text">从小我就算是一个别人眼中的“好孩子”，可我知道我自己并没有那么优秀，小学的成绩优异，到后来初中成绩逐渐在不再那么优异，心里逐</div>
+							<a href="javascript:;" class="check_detail">查看详情</a>
+							<div class="pic_list">
+								<div big-pic="http://img4.imgtn.bdimg.com/it/u=214741962,3459667576&fm=11&gp=0.jpg" style="background-image: url(http://img4.imgtn.bdimg.com/it/u=214741962,3459667576&fm=11&gp=0.jpg);"></div>
+								<div big-pic="http://img1.imgtn.bdimg.com/it/u=758155812,904294807&fm=11&gp=0.jpg" style="background-image: url(http://img1.imgtn.bdimg.com/it/u=758155812,904294807&fm=11&gp=0.jpg);"></div>
+								<div big-pic="http://img1.imgtn.bdimg.com/it/u=1891344321,2765941046&fm=26&gp=0.jpg" style="background-image: url(http://img1.imgtn.bdimg.com/it/u=1891344321,2765941046&fm=26&gp=0.jpg);"></div>
+								<div big-pic="http://img.zcool.cn/community/0114905936b857a8012193a3a114c9.jpg@1280w_1l_2o_100sh.jpg" style="background-image: url(http://img.zcool.cn/community/0114905936b857a8012193a3a114c9.jpg@1280w_1l_2o_100sh.jpg);"></div>
+								<div big-pic="http://img2.imgtn.bdimg.com/it/u=2744065745,2289722455&fm=200&gp=0.jpg" style="background-image: url(http://img2.imgtn.bdimg.com/it/u=2744065745,2289722455&fm=200&gp=0.jpg);"></div>
+								<div big-pic="http://img4.imgtn.bdimg.com/it/u=400165018,2166235200&fm=200&gp=0.jpg" style="background-image: url(http://img4.imgtn.bdimg.com/it/u=400165018,2166235200&fm=200&gp=0.jpg);"></div>
+							</div>
+						</div>
+						<div class="footer">
+							<p class="num">
+								<span>503阅读</span>
+								<span>31温暖</span>
+							</p>
+							<p class="icon">
+								<a href="javascript:;" class="praise"></a>
+								<a href="javascript:;" class="discuss"></a>
+							</p>
+						</div>
+					</div>
+					<!-- 音频 -->
+					<div>
+						<div class="header">
+							<div class="left"><img src="http://img0.imgtn.bdimg.com/it/u=3080750686,1599455322&fm=11&gp=0.jpg"></div>
+							<div class="right">
+								<p class="author">
+									<span class="name">甜甜的小糖</span>
+									<span class="sex man"></span>
+								</p>
+								<p class="time">2小时前</p>
+							</div>
+						</div>
+						<div class="content">
+							<div class="title">面对即将到来的高中生活？</div>
+							<div class="text">从小我就算是一个别人眼中的“好孩子”，可我知道我自己并没有那么优秀，小学的成绩优异，到后来初中成绩逐渐在不再那么优异，心里逐</div>
+							<a href="javascript:;" class="check_detail">查看详情</a>
+							<div class="audio_box">
+								<div class="audio_bar" audio-url="http://fjdx.sc.chinaz.com/Files/DownLoad/sound1/201808/10527.mp3">
+									<i class="icon_audio"></i>
+									<i class="icon_audio_2"></i>
+									<span class="time">41"</span>
+								</div>
+							</div>
+						</div>
+						<div class="footer">
+							<p class="num">
+								<span>503阅读</span>
+								<span>31温暖</span>
+							</p>
+							<p class="icon">
+								<a href="javascript:;" class="praise"></a>
+								<a href="javascript:;" class="discuss"></a>
+							</p>
+						</div>
+						<div class="discuss_box">
+							<div class="discuss_list">
+								<div class="audio_discuss">
+									<label>小橘子<i class="is_expert"></i>：</label>
+									<div class="audio_bar" audio-url="http://fjdx.sc.chinaz.com/Files/DownLoad/sound1/201808/10528.mp3">
+										<i class="icon_audio"></i>
+										<i class="icon_audio_2"></i>
+										<span class="time">32"</span>
+									</div>
+								</div>
+								<div>
+									<label>小橘子<i class="is_expert"></i>：</label>
+									<span class="text">天啊，我和你一摸一样的想法，但是我有办法可以缓解</span>
+								</div>
+								<div>
+									<label>小橘子：</label>
+									<span class="text">可以的，你能走出困境</span>
+								</div>
+								<a href="javascript:;" class="all_discuss">全部9条评论</a>
+							</div>
+						</div>
+					</div>
+					<!-- 带图 -->
+					<div>
+						<div class="header">
+							<div class="left"><img src="http://img5.imgtn.bdimg.com/it/u=2603106351,1754876058&fm=26&gp=0.jpg"></div>
+							<div class="right">
+								<p class="author">
+									<span class="name">甜甜的小糖</span>
+									<span class="sex woman"></span>
+								</p>
+								<p class="time">2小时前</p>
+							</div>
+						</div>
+						<div class="content">
+							<div class="title">面对即将到来的高中生活？</div>
+							<div class="text">从小我就算是一个别人眼中的“好孩子”，可我知道我自己并没有那么优秀，小学的成绩优异，到后来初中成绩逐渐在不再那么优异，心里逐...</div>
+							<a href="javascript:;" class="check_detail">查看详情</a>
+							<div class="pic_list">
+								<div big-pic="http://img4.imgtn.bdimg.com/it/u=214741962,3459667576&fm=11&gp=0.jpg" style="background-image: url(http://img4.imgtn.bdimg.com/it/u=214741962,3459667576&fm=11&gp=0.jpg);"></div>
+							</div>
+						</div>
+						<div class="footer">
+							<p class="num">
+								<span>503阅读</span>
+								<span>31温暖</span>
+							</p>
+							<p class="icon">
+								<a href="javascript:;" class="praise"></a>
+								<a href="javascript:;" class="discuss"></a>
+							</p>
+						</div>
+					</div>
+				</ul>
+				<!-- loading -->
+				<div class="loading_box dynamic_load">
+					<span class="icon"></span>
+					<span class="text">加载中...</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="margin_num" style="height: 51px;"></div>
+	</div>
+	<div class="foot_fixed">
+		<a href="javascript:;" class="weui-flex__item add_follow" onclick="functionList.followFn($(this))" style="width: 100%;">+关注</a>
+	</div>
+
+	<audio id="audio" src=""></audio>
+
+	<!-- body 最后 -->
+	<script type="text/javascript" src="./js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+	<script type="text/javascript" src="./js/swiper_weui.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 判断有无相册
+			if (!$('.pic_swiper .swiper-slide').length) {
+				$('.tutor_pic').hide();
+			}
+
+			// tab切换
+			var len = $('.top_tab .weui-flex__item').length,
+				leftNum = 21, //初始距离左边的百分比
+				$lineObj = $('.line_box .line');
+			$('.top_tab .weui-flex__item').on('click', function() {
+				var index = $(this).index();
+				functionList.changeLine(index, len, leftNum, $lineObj);
+				$(this).addClass('active_tab').siblings().removeClass('active_tab');
+				$('.tutor_box .page_content').eq(index).show().siblings().hide();
+				if (index === 1) {
+					// 计算图片列表的图片显示高度
+					var picListW = $('.pic_list').eq(0).find('div').width();
+					$('.pic_list div').css({
+						height: picListW
+					})
+				}
+			})
+
+			// 页面滚动头部变化
+			var tabTop = $('.top_tab').offset().top,
+				topBoxH = $('.top_box').innerHeight(),
+				tutorName = $('.tutor_data .name').text(),
+				isBack = $('.top_box').find('a').hasClass('back'),
+				isShare = $('.top_box').find('a').hasClass('share');
+			var index, windowH, maxScrollH, hasMore = true;
+			$(window).scroll(function() {
+				functionList.scroll_opacity($(this).scrollTop(), $('.top_box'), tutorName, isBack, isShare);
+				if ($(this).scrollTop() >= (tabTop - topBoxH)) {
+					$('.top_tab').css({
+						position: 'fixed',
+						top: topBoxH
+					})
+					$('.tutor_box').css({
+						marginTop: 44 + 'px'
+					})
+				} else {
+					$('.top_tab').css({
+						position: 'relative',
+						top: 0
+					})
+					$('.tutor_box').css({
+						marginTop: 0 + 'px'
+					})
+				}
+
+				// 上拉加载
+				index = $('.active_tab').index();
+				windowH = $(window).innerHeight();
+				if (index === 1) {
+					maxScrollH = $('.container').outerHeight() - windowH;
+					if ($(this).scrollTop() >= (maxScrollH - 50)) {
+						if (hasMore) {
+							hasMore = false;
+							setTimeout(() => {
+								getDynamicList();
+							}, 500)
+						}
+					}
+				}
+			})
+
+			function getDynamicList() {
+				$.ajax({
+					url: './mock/dynamic.json'
+				}).done(function(res) {
+					hasMore = true;
+					dynamicListHtml(res);
+				})
+			}
+
+			function dynamicListHtml(data) {
+				var divs = '';
+				$.each(data, function(index, item) {
+					divs += '<div><div class="header">';
+					divs += '<div class="left"><img src="' + item.photoUrl + '"></div>';
+					divs += '<div class="right">';
+					divs += '<p class="author">';
+					divs += '<span class="name">' + item.nickname + '</span>';
+					if (item.gender == 1) {
+						divs += '<span class="sex man"></span>';
+					} else if (item.gender == 2) {
+						divs += '<span class="sex woman"></span>';
+					}
+					divs += '</p>';
+					divs += '<p class="time">' + item.timeStr + '</p>';
+					divs += '</div></div>';
+					divs += '<div class="content">';
+					divs += '<div class="title">' + item.title + '</div>';
+					divs += '<div class="text">' + item.content + '</div>';
+					divs += '<a href="javascript:;" class="check_detail">查看详情</a>';
+					if (item.pictureList.length) {
+						divs += '<div class="pic_list">';
+						$.each(item.pictureList, function(index, picUrl) {
+							divs += '<div big-pic="' + picUrl + '" style="background-image: url(' + picUrl + ');"></div>';
+						})
+						divs += '</div>';
+					} else if (item.audioUrl) {
+						divs += '<div class="audio_box">';
+						divs += '<div class="audio_bar" audio-url="' + item.audioUrl + '">';
+						divs += '<i class="icon_audio"></i>';
+						divs += '<i class="icon_audio_2"></i>';
+						divs += '<span class="time">' + item.audioLength + '"</span></div></div>';
+					}
+					divs += '</div>';
+					divs += '<div class="footer">';
+					divs += '<p class="num">';
+					divs += '<span>' + item.readNum + '阅读</span>';
+					divs += '<span>' + item.warmNum + '温暖</span>';
+					divs += '</p>';
+					divs += '<p class="icon">';
+					if (item.hasWarm) {
+						divs += '<a href="javascript:;" class="praise is_ok"></a>';
+					} else {
+						divs += '<a href="javascript:;" class="praise"></a>';
+					}
+					divs += '<a href="javascript:;" class="discuss"></a>';
+					divs += '</p></div>';
+					if (item.commentsNum > 0) {
+						divs += '<div class="discuss_box">';
+						divs += '<div class="discuss_list">';
+						$.each(item.commentList, function(index, comment) {
+							if (comment.type == 0) {
+								divs += '<div>';
+								if (comment.isMentorAnchor == 0) {
+									divs += '<label>小橘子：</label>';
+								} else if (comment.isMentorAnchor == 1) {
+									divs += '<label>小橘子<i class="is_expert"></i>：</label>';
+								}
+								divs += '<span class="text">' + comment.content + '</span>';
+								divs += '</div>';
+							} else if (comment.type == 1) {
+								divs += '<div class="audio_discuss">';
+								if (comment.isMentorAnchor == 0) {
+									divs += '<label>小橘子：</label>';
+								} else if (comment.isMentorAnchor == 1) {
+									divs += '<label>小橘子<i class="is_expert"></i>：</label>';
+								}
+								divs += '<div class="audio_bar" audio-url="' + comment.content + '">';
+								divs += '<i class="icon_audio"></i>';
+								divs += '<i class="icon_audio_2"></i>';
+								divs += '<span class="time">' + comment.audioLength + '"</span></div></div>';
+							}	
+						})
+						divs += '<a href="javascript:;" class="all_discuss">全部9条评论</a>';
+						divs += '</div></div>';
+					}
+					divs += '</div>';
+				})
+				$('.dynamic').append(divs);
+				var picListW = $('.pic_list').eq(0).find('div').width();
+				$('.pic_list div').css({
+					height: picListW
+				})
+			}
+
+			// swiper
+			var picItems = [
+				"images/timg-head.jpg",
+			    "images/bg.jpg",
+			    "images/timg2.jpg",
+			    "images/rule_case2.png"
+		    ]
+			var picSwiper = new Swiper('.pic_swiper', {
+		        slidesPerView: 3.2,
+		        breakpoints: { 
+				    //当宽度小于等于480
+				    480: {
+				      spaceBetween: 10
+				    },
+				   //当宽度小于等于750
+				    750: { 
+				      spaceBetween: 20
+				    },
+				    //当宽度小于等于1242
+				    1242: {
+				      spaceBetween: 30
+				    }
+				},
+				onTap: function(swiper){
+					var pic = $.photoBrowser({
+						items: picItems,
+						initIndex: swiper.clickedIndex
+					});
+					pic.open()
+			    }
+		    });
+
+		    // 音频播放
+		    var audio = document.getElementById('audio');
+		    var playing = false;
+		    $(document).on('click', '.audio_bar', function() {
+		    	var audioUrl = $(this).attr('audio-url');
+		    	if (audio.currentSrc != audioUrl) {
+					playing = false;
+			    	$('.audio_bar').removeClass('opacity_bar');
+		    	}
+		    	audio.src = audioUrl;
+		    	if (playing) {
+		    		playing = false;
+		    		audio.pause();
+		    		$(this).removeClass('opacity_bar');
+		    	} else {
+		    		playing = true;
+		    		$(this).find('.icon_audio').addClass('load_audio');
+					setTimeout(() => {
+						audio.play();
+						$(this).find('.icon_audio').removeClass('load_audio');
+						$(this).addClass('opacity_bar');
+					}, 500)
+		    	}
+		    })
+		    audio.onended = function() {
+		    	playing = false;
+		    	$('.audio_bar').removeClass('opacity_bar');
+		    }
+
+		    // 动态查看大图
+		    var picArr = [];
+		    $(document).on('click', '.pic_list>div', function() {
+		    	var index = $(this).index();
+		    	picArr = [];
+		    	$(this).parent().find('div').each(function(index, item) {
+		    		picArr.push($(item).attr('big-pic'))
+		    	})
+		    	var bigPic = $.photoBrowser({
+					items: picArr,
+					initIndex: index
+				});
+				bigPic.open()
+		    })
+
+		    //动态点赞
+		    $(document).on('click', '.praise', function() {
+		    	var isOk = $(this).hasClass('is_ok');
+		    	if (isOk) {
+		    		$(this).removeClass('is_ok');
+		    	} else {
+		    		$(this).addClass('is_ok');
+		    	}
+		    })
+		})
+
+		var functionList = {
+			// tab切换改变line位置
+			changeLine: function(index, len, leftNum, $lineObj) {
+				$lineObj.animate({
+					left: ((100 / len) * index + leftNum).toFixed(2) + '%'
+				}, 200);
+			},
+			// 滚动改变透明度
+			scroll_opacity: function(scrollNum, $obj, tutorName, isBack, isShare) {
+				if (scrollNum >= 150) {
+					$obj.addClass('opacity_active');
+					$obj.find('span').text(tutorName);
+					if (isBack) {
+						$obj.find('.back').css({
+							background: 'url("./images/icon_top_back@2x.png") no-repeat center',
+							backgroundSize: 'contain'
+						})
+					}
+					if (isShare) {
+						$obj.find('.share').css({
+							background: 'url("./images/icon_top_share@2x.png") no-repeat center',
+							backgroundSize: 'contain'
+						})
+					}
+				} else {
+					$obj.removeClass('opacity_active');
+					$obj.find('span').text('');
+					if (isBack) {
+						$obj.find('.back').css({
+							background: 'url("./images/back.png") no-repeat center',
+							backgroundSize: 'contain'
+						})
+					}
+					if (isShare) {
+						$obj.find('.share').css({
+							background: 'url("./images/icon_frequency_share@2x.png") no-repeat center',
+							backgroundSize: 'contain'
+						})
+					}
+				}
+			},
+			// 是否关注
+			followFn: function($obj) {
+				if ( $obj.hasClass('is_follow') ) {
+					$obj.removeClass('is_follow');
+					$obj.text('+关注');
+					$.toast("已取消关注");
+				} else {
+					$obj.addClass('is_follow');
+					$obj.text('已关注');
+					$.toast("关注成功");
+				}
+			}
+		}
+	</script>
+</body>
+</html>

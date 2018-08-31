@@ -4,11 +4,6 @@
 	<meta charset="UTF-8">
 	<title>情说微课-音频专栏</title>
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
-	<!-- head 中 -->
-	<link rel="stylesheet" type="text/css" href="./css/weui.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
-	<link rel="stylesheet" type="text/css" href="./css/qs_weike.css">
-	<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
 	<script type="text/javascript">
 	    (function (doc, win) {
 	      	var docEl = doc.documentElement,
@@ -24,7 +19,34 @@
       		win.addEventListener(resizeEvt, recalc, false)
       		doc.addEventListener('DOMContentLoaded', recalc, false)
 	    })(document, window)
-	 </script>
+	</script>
+	<!-- head 中 -->
+	<link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/mescroll.css">
+	<link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/qs_weike.css">
+	<style type="text/css">
+	 	#dataList {
+	 		overflow: hidden;
+	 	}
+	 	.loadMore_box {
+	 		display: none;
+	 		padding-bottom: 10px;
+	 		text-align: center;
+	 	}
+	 	.loadMore {
+	 		font-size: 12px;
+	 		color: #FD7A60;
+	 	}
+	 	.tutor_detail .magazine .weui-cell {
+	 		padding: 15px 0;
+	 	}
+	 	.top_tab .line_box .twoTab {
+	 		width: 8%;
+	 		left: 21%;
+	 	}
+	 </style>
 </head>
 <body>
 	<div class="top_fixed">
@@ -96,11 +118,11 @@
 		</div>
 
 		<div class="weui-flex top_tab">
-		  	<div class="weui-flex__item active_tab">介绍</div>
-		  	<div class="weui-flex__item">课程</div>
-		  	<div class="weui-flex__item">杂志</div>
+		  	<div class="weui-flex__item active_tab" i="0">介绍</div>
+		  	<!-- <div class="weui-flex__item" i="1">课程</div> -->
+		  	<div class="weui-flex__item" i="2">杂志</div>
 		  	<div class="line_box">
-		  		<div class="line"></div>
+		  		<div class="line twoTab"></div>
 		  	</div>
 		</div>
 		<div class="tutor_box">
@@ -162,6 +184,12 @@
 							<div class="evaluation_text">
 								感情上遇到一些问题，没有办法自我消化了，所以来到网上找心理咨询师，很幸运地选了梦立方，更幸运的是客服帮我匹配了石杨晓雪老师
 							</div>
+							<div class="evaluation_review">
+								<p class="review_title">用户12天后追评</p>
+								<p class="review_cont">
+									老师真的是太棒了，完全解决了我的疑虑，感谢老师的帮助，真的非常感谢！
+								</p>
+							</div>
 							<div class="tutor_reply">
 								<div class="label">专家回复：</div>
 								<div class="content">感谢您对我的信任和支持</div>
@@ -202,135 +230,29 @@
 					</a>
 				</div>
 			</div>
-			<div class="page_content course">
-				<div class="adolesce_list">
-					<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');">
-						<div class="play_icon"></div>
-					</div>
-					<div class="title">原来你也在这里</div>
-					<div class="data">
-						<span>李四川</span>
-						<span>220</span>
-						<span>220</span>
-					</div>
-					<div class="price">¥ 18.9</div>
-				</div>
-				<div class="adolesce_list">
-					<div class="adolesce_binner" style="background-image: url('./images/bg.jpg');"></div>
-					<div class="title">心理咨询师到底是什么人？</div>
-					<div class="data">
-						<span>李四川</span>
-						<span>220</span>
-						<span>220</span>
-					</div>
-					<div class="free">免费</div>
-				</div>
+			<div class="page_content course magazine" id="mescroll">
+				<ul id="dataList">
+					
+				</ul>
 			</div>
-			<div class="page_content magazine">
-				<div class="weui-cell">
-				    <div class="weui-cell__bd">
-				      	<p class="title">从节后开工的状态，就能看到你的未来从节后开工的状态，就能看到你的未来</p>
-				      	<p class="author">主讲：李小冉</p>
-				      	<p class="data">
-				      		<label>专题</label>
-				      		<span>30293浏览</span>
-				      	</p>
-				    </div>
-				    <div class="weui-cell__ft"><img src="images/timg-head.jpg"></div>
-				</div>
-				<div class="weui-cell">
-				    <div class="weui-cell__bd">
-				      	<p class="title">从节后开工的状态，就能看到你的未来从节后开工的状态，就能看到你的未来</p>
-				      	<p class="author">主讲：李小冉</p>
-				      	<p class="data">
-				      		<label>专题</label>
-				      		<span>30293浏览</span>
-				      	</p>
-				    </div>
-				    <div class="weui-cell__ft"><img src="images/timg-head.jpg"></div>
-				</div>
-				<div class="weui-cell">
-				    <div class="weui-cell__bd">
-				      	<p class="title">从节后开工的状态，就能看到你的未来从节后开工的状态，就能看到你的未来</p>
-				      	<p class="author">主讲：李小冉</p>
-				      	<p class="data">
-				      		<label>专题</label>
-				      		<span>30293浏览</span>
-				      	</p>
-				    </div>
-				    <div class="weui-cell__ft"><img src="images/timg-head.jpg"></div>
-				</div>
-				<div class="weui-cell">
-				    <div class="weui-cell__bd">
-				      	<p class="title">从节后开工的状态，就能看到你的未来从节后开工的状态，就能看到你的未来</p>
-				      	<p class="author">主讲：李小冉</p>
-				      	<p class="data">
-				      		<label>专题</label>
-				      		<span>30293浏览</span>
-				      	</p>
-				    </div>
-				    <div class="weui-cell__ft"><img src="images/timg-head.jpg"></div>
-				</div>
-			</div>
+			<p class="loadMore_box"><a href="javascript:;" class="loadMore">加载更多</a></p>
 		</div>
 
 		<div class="margin_num" style="height: 59px;"></div>
 	</div>
 	<div class="foot_fixed">
-		<a href="javascript::" class="weui-flex__item add_follow" onclick="functionList.followFn($(this))">+关注</a>
-		<a href="javascript::" class="weui-flex__item place_order" onclick="functionList.orderFn()">立即下单</a>
-		<a href="javascript::" class="weui-flex__item talk_privately">私聊</a>
-	</div>
-
-
-	<!-- popup -->
-	<div id="magazine" class="weui-popup__container">
-	  	<div class="weui-popup__overlay"></div>
-	  	<div class="weui-popup__modal">
-	    	<div class="popup_top">
-	    		<a href="javascript:;" class="close close-popup"></a>
-	    		<a href="javascript:;" class="share"></a>
-	    	</div>
-	    	<div class="popup_content">
-				<div class="weui-cell weui-cells">
-				    <div class="weui-cell__bd">
-				      	<p class="title">从节后开工的状态，就能看到你的未来</p>
-				      	<p class="data">
-				      		<label>专题</label>
-				      		<span>30293阅读</span>
-				      	</p>
-				    </div>
-				</div>
-
-				<div class="weui-cells author_info">
-					<a class="weui-cell weui-cell_access" href="javascript:;">
-						<div class="weui-cell__hd"><img src="images/timg-head.jpg"></div>
-					    <div class="weui-cell__bd">
-					      	<p class="author">作者：咨询师杨蕾</p>
-					      	<p class="info">国家注册二级心理咨询师</p>
-					    </div>
-					    <div class="weui-cell__ft">
-							查看相关
-					    </div>
-					</a>
-				</div>
-
-				<div class="magazine_cont">
-					<p>人的自信到底从何而来？以及如何培养自己的自信？高度的自信，从高度的自律而来。自律又是什么？自律就是自己管理自己，自己约束自己。这是一个很重要的能力。先学会克制自己，用严格的日程表来控制生活，才能在这种自律中不断磨练出自信。自信也代表着对事情的控制能力，连最基本的时间都控制不了，谈何自信？</p>
-					<p>除了自律以外，自黑的能力也相当重要。世界之大，什么鸟都有。等你哪一天稍微做出点成绩，很多认识或不认识的人便在背后，唧唧歪歪的议论是非。从最开始的吐槽，到断章取义的论断甚至无趣的黑你。</p>
-					<p>自黑就是自己嘲笑自己，自己黑色幽默自己。自黑是一种沟通方式，也是一种境界，更是一种另类的修养。自黑不是等到有人说你时才出现，而是从头到尾都需要有。</p>
-					<p>人的自信到底从何而来？以及如何培养自己的自信？高度的自信，从高度的自律而来。自律又是什么？自律就是自己管理自己，自己约束自己。这是一个很重要的能力。先学会克制自己，用严格的日程表来控制生活，才能在这种自律中不断磨练出自信。自信也代表着对事情的控制能力，连最基本的时间都控制不了，谈何自信？</p>
-					<p>除了自律以外，自黑的能力也相当重要。世界之大，什么鸟都有。等你哪一天稍微做出点成绩，很多认识或不认识的人便在背后，唧唧歪歪的议论是非。从最开始的吐槽，到断章取义的论断甚至无趣的黑你。</p>
-					<p>自黑就是自己嘲笑自己，自己黑色幽默自己。自黑是一种沟通方式，也是一种境界，更是一种另类的修养。自黑不是等到有人说你时才出现，而是从头到尾都需要有。</p>
-				</div>
-	    	</div>
-	  	</div>
+		<a href="javascript:;" class="weui-flex__item add_follow" onclick="functionList.followFn($(this))">+关注</a>
+		<a href="javascript:;" class="weui-flex__item place_order">立即下单</a>
+		<a href="javascript:;" class="weui-flex__item talk_privately">私聊</a>
 	</div>
 
 	<!-- body 最后 -->
 	<script type="text/javascript" src="./js/jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+	<script type="text/javascript" src="./js/mescroll.js"></script>
 	<script type="text/javascript" src="./js/swiper_weui.min.js"></script>
+	<script type="text/javascript" src="./js/pdlist1.js"></script>
+	<script type="text/javascript" src="./js/pdlist2.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			// 判断有无相册
@@ -338,6 +260,9 @@
 				$('.tutor_pic').hide();
 			}
 
+			var curNavIndex=0;//介绍0; 课程1; 杂志2;
+			var totalPage,
+				activePage;
 
 			var tabTop = $('.top_tab').offset().top,
 				topBoxH = $('.top_box').innerHeight(),
@@ -365,19 +290,129 @@
 				}
 			})
 
-
 			// tab切换
 			var len = $('.top_tab .weui-flex__item').length,
-				leftNum = 12; //初始距离左边的百分比
+				leftNum = 21, //初始距离左边的百分比
 				$lineObj = $('.line_box .line');
 			$('.top_tab .weui-flex__item').on('click', function() {
 				var index = $(this).index();
-				functionList.changeLine(index, len, leftNum, $lineObj);
-				$(this).addClass('active_tab').siblings().removeClass('active_tab');
-				$('.tutor_box>div').hide();
-				$('.tutor_box>div').eq(index).fadeIn(200);
+				var i=Number($(this).attr("i"));
+
+				if(curNavIndex!=i) {
+					$('.loadMore_box').hide();
+					$('#mescroll').hide();
+					$('.introduce').show();
+					functionList.changeLine(index, len, leftNum, $lineObj);
+					$(this).addClass('active_tab').siblings().removeClass('active_tab');
+					//显示对应的列表
+					curNavIndex=i;
+					if (curNavIndex!==0) {
+						//重置列表数据
+						mescroll.resetUpScroll();
+						$('.introduce').hide();
+						$('#mescroll').show();
+						totalPage = 2;
+					}
+				}
 			})
 
+			$('.loadMore').on('click', function() {
+				mescroll.triggerUpScroll();
+			})
+
+			//创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,刷新列表数据;
+			var mescroll = new MeScroll("mescroll", { //id固定"body"
+				down: {
+					use: false
+				},
+				//上拉加载的配置项
+				up: {
+					callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
+					noMoreSize: 4, //如果列表已无数据,可设置列表的总数量要大于半页才显示无更多数据;避免列表数据过少(比如只有一条数据),显示无更多数据会不好看; 默认5
+					clearEmptyId: "dataList" //相当于同时设置了clearId和empty.warpId; 简化写法;默认null
+				}
+			});
+
+			/*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
+			function getListData(page){
+				//联网加载数据
+				console.log("curNavIndex="+curNavIndex+", page.num="+page.num);
+				activePage = page.num;
+				getListDataFromNet(curNavIndex, page.num, page.size, function(data){
+					//联网成功的回调,隐藏下拉刷新和上拉加载的状态;
+					console.log("data.length="+data.length);
+					mescroll.endSuccess(data.length);
+					//设置列表数据
+					setListData(data);
+				}, function(){
+					//联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+	                mescroll.endErr();
+				});
+			}
+
+			/*设置列表数据*/
+			function setListData(data){
+
+				// var listDom=document.getElementById("dataList"+curNavIndex);
+				var $listDom=$('#dataList');
+
+				for (var i = 0; i < data.length; i++) {
+					
+					if (curNavIndex == 1) {
+						var str = courseHtmlFn(data[i]);
+					} else if (curNavIndex == 2) {
+						var str = magazineHtmlFn(data[i]);
+					}
+
+					$listDom.append(str);
+				}
+			}
+
+			/*联网加载列表数据*/
+			function getListDataFromNet(curNavIndex,pageNum,pageSize,successCallback,errorCallback) {
+				//延时一秒,模拟联网
+                setTimeout(function () {
+             		// $.ajax({
+		             //    type: 'GET',
+		             //    url: 'xxx',
+		             //    url: 'data.json?curNavIndex='+curNavIndex+'&num='+pageNum+'&size='+pageSize,
+		             //    dataType: 'json',
+		             //    success: function(data){
+		                	var data;
+		                	var listData=[];
+		                	if (activePage >= totalPage) {
+		                		$('.loadMore_box').hide();
+		                	} else {
+		                		$('.loadMore_box').show();
+		                	}
+		                	if(curNavIndex==1){
+		                		data = pdlist1;
+		                		//全部 (模拟分页数据)
+								for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
+				            		if(i==data.length) break;
+				            		listData.push(data[i]);
+				            	}
+								
+		                	}else if(curNavIndex==2){
+		                		data = pdlist2;
+		                		//全部 (模拟分页数据)
+								for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
+				            		if(i==data.length) break;
+				            		listData.push(data[i]);
+				            	}
+		                		
+		                	}
+		                	
+		                	//回调
+		                	successCallback(listData);
+		            //     },
+		            //     error: errorCallback
+		            // });
+                },400)
+			}
+			
+			//禁止PC浏览器拖拽图片,避免与下拉刷新冲突;如果仅在移动端使用,可删除此代码
+			document.ondragstart=function() {return false;}
 
 			// swiper
 			var picItems = [
@@ -411,21 +446,43 @@
 			    }
 		    });
 
-
 		    // 点击评价分类
 		    $(document).on('click', '.evaluation_link a', function() {
 		    	$(this).addClass('evaluation_active').siblings().removeClass('evaluation_active');
 		    })
-
-
-		    // 点击杂志打开详情
-		    $(document).on('click', '.magazine .weui-cell', function() {
-		    	$("#magazine").popup();
-		    	$('.popup_content').css({
-		    		height: $(window).innerHeight() - 44
-		    	})
-		    })
 		})
+
+		function courseHtmlFn(data) {
+	    	var divs = "";
+    		divs += '<div class="adolesce_list">';
+    		divs += '<div class="adolesce_binner" style="background-image: url('+data.img+');">';
+    		divs += '<div class="play_icon"></div>';
+    		divs += '</div>';
+    		divs += '<div class="title">'+data.title+'</div>';
+    		divs += '<div class="data">';
+    		divs += '<span>'+data.author+'</span>';
+    		divs += '<span>'+data.num+'</span>';
+    		divs += '<span>'+data.num+'</span>';
+    		divs += '</div>';
+    		divs += '<div class="price">¥ 18.9</div>';
+    		divs += '</div>';
+			return divs;
+	    }
+
+	    function magazineHtmlFn(data) {
+	    	var divs = "";
+    		divs += '<div class="weui-cell">';
+    		divs += '<div class="weui-cell__bd">';
+    		divs += '<p class="title">'+data.title+'</p>';
+    		divs += '<p class="author">主讲：'+data.author+'</p>';
+    		divs += '<p class="data">';
+    		divs += '<label>专题</label>';
+    		divs += '<span>'+data.num+'浏览</span>';
+    		divs += '</p></div>';
+    		divs += '<div class="weui-cell__ft"><img src="'+data.img+'"></div>';
+    		divs += '</div>';
+			return divs;
+	    }
 
 		var functionList = {
 			// tab切换改变line位置
@@ -441,13 +498,13 @@
 					$obj.find('span').text(tutorName);
 					if (isBack) {
 						$obj.find('.back').css({
-							background: 'url("../images/icon_top_back@2x.png") no-repeat center',
+							background: 'url("./images/icon_top_back@2x.png") no-repeat center',
 							backgroundSize: 'contain'
 						})
 					}
 					if (isShare) {
 						$obj.find('.share').css({
-							background: 'url("../images/icon_top_share@2x.png") no-repeat center',
+							background: 'url("./images/icon_top_share@2x.png") no-repeat center',
 							backgroundSize: 'contain'
 						})
 					}
@@ -456,13 +513,13 @@
 					$obj.find('span').text('');
 					if (isBack) {
 						$obj.find('.back').css({
-							background: 'url("../images/back.png") no-repeat center',
+							background: 'url("./images/back.png") no-repeat center',
 							backgroundSize: 'contain'
 						})
 					}
 					if (isShare) {
 						$obj.find('.share').css({
-							background: 'url("../images/icon_frequency_share@2x.png") no-repeat center',
+							background: 'url("./images/icon_frequency_share@2x.png") no-repeat center',
 							backgroundSize: 'contain'
 						})
 					}
@@ -479,42 +536,6 @@
 					$obj.text('已关注');
 					$.toast("关注成功");
 				}
-			},
-			// 立即下单
-			orderFn: function() {
-				$.actions({
-					title: '请选择服务内容',
-					actions: [
-						{
-						    text: "分析当前所面临的困境",
-						    className: 'react_style',
-						    onClick: function() {
-						      	//do something
-						    }
-						},
-						{
-						    text: "指导分析情感性困惑",
-						    className: 'react_style',
-						    onClick: function() {
-						      	//do something
-						    }
-						},
-						{
-						    text: "孩子青春期培养和心理辅导",
-						    className: 'react_style',
-						    onClick: function() {
-						      	//do something
-						    }
-						},
-						{
-						    text: "焦虑抑郁自闭",
-						    className: 'react_style',
-						    onClick: function() {
-						      	//do something
-						    }
-						}
-					]
-				});
 			}
 		}
 	</script>

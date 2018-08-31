@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>情说微课-文章详情</title>
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
+	<!-- head 中 -->
+	<link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/qs_weike.css">
+	<script type="text/javascript">
+	    (function (doc, win) {
+	      	var docEl = doc.documentElement,
+	     	resizeEvt = 'orientationchange' in window
+	        	? 'orientationchange'
+	        	: 'resize',
+	      	recalc = function () {
+	        	var clientWidth = docEl.clientWidth
+	        	if (!clientWidth) return
+	       		docEl.style.fontSize = clientWidth / 18.75 + 'px'
+	      	}
+      		if (!doc.addEventListener) return
+      		win.addEventListener(resizeEvt, recalc, false)
+      		doc.addEventListener('DOMContentLoaded', recalc, false)
+	    })(document, window)
+	 </script>
+	 <style type="text/css">
+	 	#magazine .popup_content .author_info .weui-cell {
+	 		-webkit-align-items: center;
+    		align-items: center;
+	 	}
+	 	.popup_content .author_info .weui-cell__ft {
+	 		padding-right: 0;
+	 	}
+	 	.popup_content .author_info .weui-cell__ft:after {
+	 		border-style: none;
+	 	}
+	 	#magazine .popup_content .author_info .weui-cell__ft .talk_privately {
+	 		display: block;
+	 		width: 60px;
+	 		height: auto;
+	 		margin-right: 0;
+	 		cursor: pointer;
+	 		border-radius: 0;
+	 	}
+	 </style>
+</head>
+<body>
+	<div class="container" id="magazine">
+		<div class="popup_content" style="padding: 0 15px; background-color: #fff;">
+			<div class="weui-cell weui-cells">
+			    <div class="weui-cell__bd">
+			      	<p class="title">从节后开工的状态，就能看到你的未来</p>
+			      	<p class="data">
+			      		<label>专题</label>
+			      		<span>30293阅读</span>
+			      	</p>
+			    </div>
+			</div>
+
+			<div class="weui-cells author_info">
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+					<div class="weui-cell__hd"><img src="images/timg-head.jpg"></div>
+				    <div class="weui-cell__bd">
+				      	<p class="author">作者：咨询师杨蕾</p>
+				      	<p class="info">国家注册二级心理咨询师</p>
+				    </div>
+				    <div class="weui-cell__ft">
+						<img class="talk_privately" src="images/icon_chat@2x.png" />
+				    </div>
+				</a>
+			</div>
+
+			<div class="magazine_cont">
+				<p>人的自信到底从何而来？以及如何培养自己的自信？高度的自信，从高度的自律而来。自律又是什么？自律就是自己管理自己，自己约束自己。这是一个很重要的能力。先学会克制自己，用严格的日程表来控制生活，才能在这种自律中不断磨练出自信。自信也代表着对事情的控制能力，连最基本的时间都控制不了，谈何自信？</p>
+				<p>除了自律以外，自黑的能力也相当重要。世界之大，什么鸟都有。等你哪一天稍微做出点成绩，很多认识或不认识的人便在背后，唧唧歪歪的议论是非。从最开始的吐槽，到断章取义的论断甚至无趣的黑你。</p>
+				<p>自黑就是自己嘲笑自己，自己黑色幽默自己。自黑是一种沟通方式，也是一种境界，更是一种另类的修养。自黑不是等到有人说你时才出现，而是从头到尾都需要有。</p>
+			</div>
+    	</div>
+	</div>
+
+	<!-- body 最后 -->
+	<script type="text/javascript" src="./js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="./js/jquery-weui.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//点击私聊
+			$('.talk_privately').click(function(e) {
+				var oEvent = e || event;
+                //js阻止事件冒泡
+                oEvent.cancelBubble = true;
+                oEvent.stopPropagation();
+
+                //js阻止链接默认行为，没有停止冒泡
+                oEvent.preventDefault(); 
+                return false;
+			})
+		})
+	</script>
+</body>
+</html>

@@ -27,14 +27,7 @@
 	    })(document, window)
 	 </script>
 	 <style type="text/css">
-	 	#dataList0,
-	 	#dataList1,
-	 	#dataList2 {
-	 		overflow: hidden;
-	 	}
-	 	#mescroll0,
-	 	#mescroll1,
-	 	#mescroll2 {
+	 	.qs_magazine .page_content {
 	 		width: 100%;
 	 		height: auto;
 	 		position: fixed;
@@ -158,6 +151,10 @@
 			//初始化首页
 			mescrollArr[0]=initMescroll("mescroll0", "dataList0");
 
+			var mescroll,
+				curWord=null;  //当前关键词
+
+
 
 			// tab切换
 			var len = $('.top_tab .weui-flex__item').length,
@@ -178,11 +175,13 @@
 					//取出菜单所对应的mescroll对象,如果未初始化则初始化
 					if(mescrollArr[i]==null) mescrollArr[i]=initMescroll("mescroll"+i, "dataList"+i);
 				}
+
+				initSwiper();
 			})
 			/*创建MeScroll对象*/
 			function initMescroll(mescrollId,clearEmptyId){
 				//创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,刷新列表数据;
-				var mescroll = new MeScroll(mescrollId, {
+				mescroll = new MeScroll(mescrollId, {
 					//上拉加载的配置项
 					up: {
 						callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
@@ -204,7 +203,7 @@
 			function getListData(page){
 				//联网加载数据
 				console.log("curNavIndex="+curNavIndex+", page.num="+page.num);
-				getListDataFromNet(curNavIndex, page.num, page.size, function(data){
+				getListDataFromNet(curWord, curNavIndex, page.num, page.size, function(data){
 					//联网成功的回调,隐藏下拉刷新和上拉加载的状态;
 					console.log("data.length="+data.length);
 					mescrollArr[curNavIndex].endSuccess(data.length);//传参:数据的总数; mescroll会自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
@@ -230,7 +229,8 @@
 				}
 			}
 			/*联网加载列表数据*/
-			function getListDataFromNet(curNavIndex,pageNum,pageSize,successCallback,errorCallback) {
+			function getListDataFromNet(curWord,curNavIndex,pageNum,pageSize,successCallback,errorCallback) {
+				console.log(curWord)
 				//延时一秒,模拟联网
                 setTimeout(function () {
              		// $.ajax({
@@ -282,23 +282,18 @@
 			document.ondragstart=function() {return false;}
 
 
-
 			// swiper
-			$('.label_swiper .swiper-slide').each(function() {
-		    	$(this).css({
-		    		width: $(this).find('span').width() + 38
-		    	})
-		    })
-			var labelSwiper = new Swiper('.label_swiper', {
-		        slidesPerView: 'auto',
-		        slideToClickedSlide: true
-		    });
-		    $('.label_swiper .swiper-slide').on('click', function() {
+			initSwiper();
+		    $(document).on('click', '.label_swiper .swiper-slide', function() {
 		    	$(this).addClass('label_active').siblings().removeClass('label_active');
+
+		    	curWord=$(this).find('span').text(); //更新关键词
+				mescroll.resetUpScroll(); //重新搜索,重置列表数据
 		    })
 
 		    // 点击杂志打开详情
 		    $(document).on('click', '.qs_magazine .weui-cell', function() {
+		    	// $.showLoading("正在加载...");
 		    	$("#magazine").popup();
 		    	$('.popup_content').css({
 		    		height: $(window).innerHeight() - 44
@@ -329,6 +324,18 @@
     		divs += '</div>';
 			return divs;
 	    }
+
+	 	function initSwiper() {
+	 		$('.label_swiper .swiper-slide').each(function() {
+		    	$(this).css({
+		    		width: $(this).find('span').width() + 38
+		    	})
+		    })
+		    var labelSwiper = new Swiper('.label_swiper', {
+		        slidesPerView: 'auto',
+		        slideToClickedSlide: true
+		    });
+	 	}
 	</script>
 </body>
 </html>
